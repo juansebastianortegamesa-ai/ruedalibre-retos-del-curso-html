@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/ruedalibre-retos-del-curso-html/css/style.css">
     <title>RESERVAS</title>
 </head>
 <body>
@@ -88,7 +89,7 @@
               maxlength="10"
               pattern="(?!1234567$)\d+$"
               pattern="[0-9]{7,10}" placeholder="Ej: 12345678"
-              title="secuencias como 123456 no son validas,recuerde introducir su cedula correctamente"/>
+              title="secuencias como 123456 o -11111 no son validas,recuerde introducir su cedula correctamente"/>
             </p>
           </fieldset>
 
@@ -103,6 +104,7 @@
                 required
                 min="1"
                 max="6"
+                title="recuerde que el minimo es 1 bicicleta y el maximo 6"
               />
             </p>
           </fieldset>

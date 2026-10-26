@@ -10,9 +10,80 @@ CODIGO DE ESTADO:304 (incialmente sin codigo de error) y con la url falsa da 404
 
 #para que sirve cada lenguaje
 
-java script permite que la pagina responda a las acciones del usuario como por ejemplo validar formularios, actualizar la informacion de la pagina sin recargar la pagina encontró
-el html sirve para  organizar y seccionar  practicamente armar el cuerpo de pagina y hacer las funciones como botones enlaces a otras paginas o colocar imagenes encontró
+java script permite que la pagina responda a las acciones del usuario como por ejemplo validar formularios, actualizar la informacion de la pagina sin recargar
+
+el html sirve para  organizar y seccionar  practicamente armar el cuerpo de pagina y hacer las funciones como botones enlaces a otras paginas o colocar imagenes
+
 css sirve para controlar la aparencia visual de la pagina como las fuentes de las letras animaciones distribucion de elementos.
 
+rutas 
+
+index 
+href="#encuentranos">encuentranos
+href="#nuestros productos">nuestros productos
+href="paginas/tarifas.html">Tarifas
+href="paginas/reservas.html">puedes reservar aqui
+
+
+tarifas
+href="../index.html">Ir a la pagina principal
+href="reservas.html">puedes reservar aqui
+
+reservas
+href="../index.html">Inicio
+href="tarifas.html">Tarifas y Rutas
+href="reservas.html">Reservas
+
+Tablas de pruebas 
+|--------------------------------------------------------------------------------------------------|
+|   | Campo          | Dato de prueba     | Resultado esperado          | Resultado obtenido       |
+|--------------------------------------------------------------------------------------------------|
+| 1 | Nombre         | 12345678910        | Rechazar números            | Rechaza números          |
+| 2 | Documento      | -183272782123884   | Rechazar valores negativos  | Rechaza num negativos    |
+| 3 | Email          | panchito666@       | Rechazar formato invalido   | pide.com o otra extencion|
+| 4 | Celular        | adjahduwagd        | Rechazar letras             | Rechaza las letras       |
+| 5 | Fecha alquiler | 6/6/2026           | Rechazar fecha inválida     | Pide cambiar fecha       |
+| 6 | Tipo de bici   | default            | Rechazar por no seleccionar | Pide seleccionar una bici|
+| 7 | Duración alqr  | default            | Rechazar por no seleccionar | Pide seleccionar tiempo  | 
+| 8 | Cantidad bicis | -10                | Rechazar valores negativos  | Rechaza  num negativos   |
+| 9 | confirmar datos| Sin marcar         | Avisar de campo obligatorio | Aviso de requerido       |
+| 10 | Aeptar terms  | Sin marcar         | Avisar de campo obligatorio | Aviso de requerido       |
+|--------------------------------------------------------------------------------------------------|
+
+|--------------------------------------------------------------------------------------------|
+|   | Campo          | Dato de prueba     | Resultado esperado          | Resultado obtenido |
+|--------------------------------------------------------------------------------------------|
+| 1 | Nombre         | a                  | Rechazar por -3 caracteres  | Pide nombre +3 char|
+| 2 | Documento      | sajdj              | Rechazar strings            | Pide numeros       |
+| 3 | Email          | 1243824737         | que pida el @               |pide @              |
+| 4 | Celular        | 40039145           | Rechazar, primer debe ser 3 | pide empezar por 3 |
+| 5 | Fecha alquiler | 23/noviembre/2026  | Rechazar texto              | Pide cambiar fecha |
+| 6 | Tipo de bici   | default            | Rechazar por no seleccionar | Pide seleccionar   |
+| 7 | Duración alqr  | default            | Rechazar por no seleccionar | Pide seleccionar   | 
+| 8 | Cantidad bicis | adjiadjaudh        | Rechazar entrada de strings | Pide solo numeros  |
+| 9 | confcion datos | Sin marcar         | Avisar de campo obligatorio | Aviso de requerido |
+| 10 | Aeptar terms  | Sin marcar         | Avisar de campo obligatorio | Aviso de requerido |
+|--------------------------------------------------------------------------------------------|
+
+
 #RETO DEL DIA 2
+
+
+clasificacion de tablas de color:
+
+|-----------------------------------------------------------------------------------------|
+| Combinación                         | Contraste | Texto normal (AA) | Texto grande (AA) |
+|-----------------------------------------------------------------------------------------|
+| Blanco sobre Verde Ruta             | 5.31:1    | Sí                | Sí                |
+| Blanco sobre Naranja Pedal          | 2.21:1    | No                | No                |
+| Azul Noche sobre Naranja Pedal      | 7.01:1    | Sí                | Sí                |
+| Azul Noche sobre Crema              | 14.44:1   | Sí                | Sí                |
+| Gris Asfalto sobre Crema            | 5.56:1    | Sí                | Sí                |
+| Verde Ruta sobre Crema              | 4.93:1    | Sí                | Sí                |
+| Naranja Pedal sobre Crema           | 2.05:1    | No                | No                |
+| Blanco sobre Azul Noche             | 15.97:1   | Sí                | Sí                |
+|-----------------------------------------------------------------------------------------|
+
+Relación de contraste WCAG:
+
 
