@@ -1,0 +1,30 @@
+
+:root {
+    --color-verde-ruta: #1e7a4f;
+    --color-naranja-pedal: #F39A2B;
+    --color-azul-noche: #14213D;
+    --color-crema: #FAF6EF;
+    --color-gris-asfalto: #5B6470;
+
+    --font-titulos: 'Montserrat', Arial, sans-serif;
+    --font-textos: 'Open Sans', Arial, sans-serif;
+
+    --espaciado-s: 0.5rem;
+    --espaciado-m: 1rem;
+    --espaciado-l: 1.5rem;
+}
+
+
+body {
+    font-family: var(--font-textos);
+    background-color: var(--color-crema);
+    color: var(--color-azul-noche);
+    margin: 0;
+
+
+
+
+}
+    
+ 
+
