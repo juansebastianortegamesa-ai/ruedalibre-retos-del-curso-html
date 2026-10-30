@@ -15,6 +15,10 @@
     --espaciado-l: 1.5rem;
 }
 /* como se va  a ver el cuerpo de la pagina*/
+*{
+    font-family: var(--font-textos);
+}
+
 body{
 
     font-family: var(--font-textos);
@@ -67,5 +71,3 @@ tr:nth-child(even) {
 #menu a:focus{
     color: var(--color-verde-ruta)
 }
-
-
