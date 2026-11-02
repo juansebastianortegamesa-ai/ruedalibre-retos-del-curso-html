@@ -54,7 +54,7 @@ Tablas de pruebas
 |   | Campo          | Dato de prueba     | Resultado esperado          | Resultado obtenido |
 |--------------------------------------------------------------------------------------------|
 | 1 | Nombre         | a                  | Rechazar por -3 caracteres  | Pide nombre +3 char|
-| 2 | Documento      | adijqdkasdidadhaa | Rechazar strings            | Pide numeros       |
+| 2 | Documento      | adijqdkasdidadhaa  | Rechazar strings            | Pide numeros       |
 | 3 | Email          | 1243824737         | que pida el @               |pide @              |
 | 4 | Celular        | 40039145           | Rechazar, primer debe ser 3 | pide empezar por 3 |
 | 5 | Fecha alquiler | 23/noviembre/2026  | Rechazar texto              | Pide cambiar fecha |
@@ -89,27 +89,25 @@ Texto normal: mínimo 4.5:1
 Texto grande: mínimo 3:1
 
 mapa de uso de color
-
-
-
-
-
-
-Plaintext
-
-----------------------------------------------------------------------------------------------  |
-MAPA DE COLOR                                                                                   |
---------------------------------------------------------------------------------------------    |
-| Elemento UI / Uso           | Nombre del Color     | Código HEX | Propósito principal         |
---------------------------------------------------------------------------------------------    |
-| Fondo General               | Crema Claro Frio     | #FAF6EF    | Fondo neutro suave        |
-| Títulos y Encabezados       | Azul Noche           | #14213D    | Máximo contraste 
-| Texto Principal             | Gris Asfalto         | #5B6470    | Lectura cómoda y legible  |
-| Botones y Enlaces           | Verde Ruta (Frío/Sec)| #1E7A4F    | Interacción y llamadas    |
------------------------------------------------------------------------------------------------ |
-VALIDACIÓN DE CONTRASTE (WCAG AA):                                                              |
-- Azul Noche sobre Crema Claro Frio (14.44:1) -> Apto para Texto Normal y Grande (Sí / Sí)      |
-- Gris Asfalto sobre Crema Claro Frio (5.56:1) -> Apto para Texto Normal y Grande (Sí / Sí)     |
-- Blanco sobre Azul Noche (15.97:1)           -> Apto para Texto Normal y Grande (Sí / Sí)      |
-------------------------------------------------------------------------------------------------|
++----------------------------------------------------------------------------------------------+
+|                                      MAPA DE COLOR                                           |
++----------------------------+---------------------+------------+-------------------------------+
+| Elemento UI / Uso         | Nombre del color  | Código HEX | Propósito principal             |
++----------------------------+---------------------+------------+-------------------------------+
+| Fondo General             | Crema             | #FAF6EF  | Fondo neutro y limpio           |
+| Títulos y Encabezados     | Azul Noche        | #14213D  | Máximo contraste y jerarquía    |
+| Texto Principal           | Gris Asfalto      | #5B6470  | Lectura cómoda y legible        |
+| Botones y Enlaces         | Verde Ruta        | #1E7A4F  | Interacción y llamadas acción   |
+| Destacados y Botones Sec. | Naranja Pedal     | #F39A2B  | Resaltar información importante |
++----------------------------------------------------------------------------------------------+
+|                            VALIDACIÓN DE CONTRASTE (WCAG AA)                                 |
++----------------------------------------------------------------------------------------------+
+| Combinación                                  | Contraste | Texto normal | Texto grande       |
++----------------------------------------------+-----------+--------------+--------------------+
+| Azul Noche sobre Crema                       | 14.83:1   | Sí           | Sí                 |
+| Gris Asfalto sobre Crema                     | 5.57:1    | Sí           | Sí                 |
+| Blanco sobre Azul Noche                      | 15.97:1   | Sí           | Sí                 |
+| Blanco sobre Verde Ruta                      | 5.31:1    | Sí           | Sí                 |
+| Azul Noche sobre Naranja Pedal               | 7.20:1    | Sí           | Sí                 |
++----------------------------------------------------------------------------------------------+
 

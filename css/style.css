@@ -1,4 +1,8 @@
-/* como se ve la pagina*/
+/* esto sirve pa que  no se desborde la pagina*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 :root {
     --color-verde-ruta: #1e7a4f;
     --color-naranja-pedal: #F39A2B;
@@ -15,32 +19,64 @@
     --espaciado-l: 1.5rem;
 }
 /* como se va  a ver el cuerpo de la pagina*/
-*{
-    font-family: var(--font-textos);
-}
-
 body{
-
-    font-family: var(--font-textos);
-    h1, h2, h3, h4, h5, h6 { font-family:var(--font-titulos);
     background-color: var(--color-crema);
     color: var(--color-azul-noche);
-    margin: 1;
-    text-align: justify;
-}    
+    font-family: var(--font-textos);
+    max-width: 75rem;
+    margin: 0 auto;   
+    padding: 0 1rem;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;}
+
+h1, h2, h3 {
+font-family: var(--font-titulos);
+color: var(--color-azul-noche);}
+p{font-family: var(--font-textos);}
+
+
+/*header solo para la primera pagina*/
+header .portada-inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+    font-family: var(--font-titulos);
+    color: var(--color-azul-noche);
+   font-size: 2rem;
+
+header .divinicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    width: 100%;
+}
+header .logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+}
 }
 
-/* como se va a ver los titulos de los header */
-
-#header {
+/*header del resto de paginas*/
+ #header {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    font-family: var(--font-titulos)
-    color
+    font-family: var(--font-textos);
+    color: var(--color-azul-noche);
 }
 
 /* como se van a ver las tablas*/
-
-#table {
+#table{
     width: 100%;                     
     border-collapse: collapse;      
     font-family: Arial, sans-serif; 
@@ -48,7 +84,6 @@ body{
     text-align: center;      
     table-layout: fixed;
 }
-
 th, td {
     border: 1px solid #050505;     
     padding: 0.5rem;                  
@@ -62,12 +97,85 @@ tr:nth-child(even) {
 }
 
 /*dejar menu activo*/
-#menu a { color: var(--color-gris-asfalto); }
+
+#menu a { color: var(--color-gris-asfalto);  
+cursor: pointer; text-decoration: none; font-weight: 400; }
+
 #menu a.activo { color: var(--color-verde-ruta); font-weight: 600; }
 #menu a:hover  { 
     text-decoration: underline; color:#1E7A4F;
-    color: var(--color-verde-ruta)    
-}
+    color: var(--color-verde-ruta)}    
+
 #menu a:focus{
     color: var(--color-verde-ruta)
 }
+
+
+/* pal boton de reservar ahora*/
+.btn-reserva{
+    background-color: var(--color-verde-ruta);
+    color:  var(--color-crema);
+    border: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-reserva:hover {
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-crema);
+}
+.btn-reserva:focus {
+    color: var(--color-naranja-pedal);
+    text-decoration: none;
+}
+
+/* pal formulario  y los links */ 
+input:focus, textarea:focus, select:focus {
+    outline: none; 
+    border: 2px solid var(--color-naranja-pedal);
+    box-shadow: var(--color-naranja-pedal) 1px 1px 1px;
+}
+ 
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 3px solid var(--color-naranja-pedal);
+    outline-offset: 2px;
+}    
+
+/*los articulos*/
+
+article .Bicicleta {
+    font-family: var(--font-textos);
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+article.Bicicleta ol {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; 
+}
+
+article.Bicicleta li {
+    background-color: var(--color-crema); 
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 8px;     
+    padding: 1rem;          
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+article.Bicicleta img {
+    width: 100%;    
+    height: auto;   
+    display: block;
+    border-radius: 4px;
+}
+
+
+
