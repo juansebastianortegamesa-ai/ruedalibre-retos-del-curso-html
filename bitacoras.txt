@@ -111,3 +111,22 @@ mapa de uso de color
 | Azul Noche sobre Naranja Pedal               | 7.20:1    | Sí           | Sí                 |
 +----------------------------------------------------------------------------------------------+
 
+
+MI PAGINA WEB
+
+>
+
+
+PARA QUE SIRVE EL BOX-sizing:
+
+(sin box-sizing), 
+el ancho y alto asignados en CSS aplican solo al contenido. El padding y el border se suman por fuera,aumentando el tamaño total de la tarjeta a 610.391 × 573.875 px.
+
+Con border-box:
+ el padding y el border se incluyen dentro de las dimensiones definidas en CSS. 
+ El navegador reduce el espacio interno para respetar el tamaño fijado, ajustando la tarjeta a 517.984 × 400 px.
+
+
+
+
+
