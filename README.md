@@ -79,20 +79,7 @@ Esta bitácora documenta las correcciones, ajustes de accesibilidad, optimizacio
 
     * Configuración de la retícula de tarjetas con CSS Grid (`grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));`) y centrado horizontal (`justify-content: center;`).
 
-* **Navegación Horizontal (`#menu`):**
-
   * *Estado Inicial:* Enlaces desordenados.
-
-  * *Estado Actual:* Flexbox aplicado en `#menu` (`display: flex; gap: 1.5rem; justify-content: center;`) para distribuir el menú en una sola fila.
-
-## 3. Medición en DevTools: Cambio en `box-sizing` (Punto 7)
-
-| Elemento Analizado | Con `box-sizing: content-box` (Inicial) | Con `box-sizing: border-box` (Actual) | Impacto |
-| ----- | ----- | ----- | ----- |
-| **Tarjeta de Producto** (`article.Bicicleta li`) | Ancho base + 32px (padding) + 2px (border) = **Mayor al valor asignado** | Ancho total fijo exacto incluyendo relleno y borde | Evita desbordamientos y descuadres en la cuadrícula de la página |
-
-## 4. Estado Actual del Sitio
-
 1. **Semántica y Estructura:** Código validado en HTML5, sin etiquetas inventadas y con buen uso de etiquetas accesibles.
 2. **Estética y Adaptabilidad:** Tarjetas alineadas, imágenes auto-ajustables y encabezados proporcionales a cada sección.
 3. **Accesibilidad (WCAG):** Foco claramente visible al navegar con la tecla `Tab` tanto en links como en formularios.
