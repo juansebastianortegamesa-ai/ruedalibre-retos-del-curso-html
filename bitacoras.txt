@@ -34,6 +34,173 @@ href="../index.html">Inicio
 href="tarifas.html">Tarifas y Rutas
 href="reservas.html">Reservas
 
+ESQUEMAS DE REGIONES SEMANTICAS"
+
+1. `index.html`
+<html lang="es">
+└── <body>
+    ├── <header id="header" class="inicio_1">
+    │   ├── <h1> RUEDA LIBRE
+    │   ├── <div>
+    │   │   ├── <p> <img> Logotipo de Rueda Libre[cite: 9]
+    │   │   └── <h2> Bienvenido a Rueda Libre, aqui puedes alquilar bicicletas en Medellín.[cite: 9]
+    │   └── <nav id="menu">
+    │       ├── Enlace: inicio
+    │       ├── Enlace: encuentranos
+    │       ├── Enlace: nuestros productos
+    │       ├── Enlace: Tarifas
+    │       └── Enlace: puedes reservar aqui
+    │
+    ├── <main>
+    │   ├── <section>
+    │   │   ├── <h2> ¿QUIENES SOMOS?
+    │   │   └── <p> Descripción de la empresa
+    │   │
+    │   ├── <section>
+    │   │   ├── <h2> NUESTROS SERVICIOS
+    │   │   ├── <p> <img> Imagen de representación de servicios[cite: 9]
+    │   │   ├── <p> Texto descriptivo de servicios
+    │   │   ├── <article class="Bicicleta">
+    │   │   │   └── <ol> Lista de servicios (Tours, Domicilio, Kit de seguridad, Paquetes, Mantenimiento, Personalización)[cite: 9]
+    │   │   └── <aside>
+    │   │       └── <p> <img> Imagen de bicicletas y accesorios[cite: 9]
+    │   │
+    │   ├── <section>
+    │   │   ├── <h2> nuestros productos
+    │   │   └── <div>
+    │   │       ├── <h2 id="nuestros productos"></h2>
+    │   │       ├── <h3> LISTA DE PRODUCTOS
+    │   │       ├── <article class="Bicicleta">
+    │   │       │   └── <ol>
+    │   │       │       ├── <li> bicicleta scoop + imagen + botón comprar[cite: 9]
+    │   │       │       ├── <li> bicicletas BMX personalizadas + imagen + botón comprar[cite: 9]
+    │   │       │       └── <li> bicicletas de competicion + imagen + botón comprar[cite: 9]
+    │   │       │
+    │   │       └── <section>
+    │   │           ├── <h3> OTROS PRODUCTOS
+    │   │           └── <div>
+    │   │               └── <article class="Bicicleta">
+    │   │                   └── <ol>
+    │   │                       ├── <li> cascos para bicicleta + imagen + botón comprar[cite: 9]
+    │   │                       ├── <li> accesorios para bicicleta + imagen + botón comprar[cite: 9]
+    │   │                       └── <li> productos de limpieza + imagen + botón comprar[cite: 9]
+    │   │
+    │   ├── <section id="rutas">
+    │   │   ├── <h2> Nuestras rutas
+    │   │   └── <div>
+    │   │       └── <article class="Bicicleta">
+    │   │           └── <ol>
+    │   │               ├── <li> RIO Y PARQUES + imagen + nivel + botón reservar[cite: 9]
+    │   │               ├── <li> SABORES DE BARRIO + imagen + nivel + botón reservar[cite: 9]
+    │   │               └── <li> RUTA LAS PALMAS + imagen + nivel + botón reservar[cite: 9]
+    │   │
+    │   ├── <section>
+    │   │   └── <section id="encuentranos">
+    │   │       ├── <h2> Encuéntranos
+    │   │       ├── <p> <img> Ubicación Rueda Libre[cite: 9]
+    │   │       └── Enlace: Nuestra Ubicación (botón)
+    │   │
+    │   ├── <p> Texto de contacto
+    │   ├── Enlace: hola@ruedalibre@gmail.com (botón)[cite: 9]
+    │   ├── <h2> como alquilar?[cite: 9]
+    │   └── <b> Instrucciones de alquiler[cite: 9]
+    │
+    └── <footer>
+        ├── Botón flotante: WhatsApp[cite: 9]
+        ├── <div> 2026 sebastian ortega . Todos los derechos reservados[cite: 9]
+        └── <ul>
+            ├── <li> Rueda libre[cite: 9]
+            └── <li> 2026[cite: 9]
+
+----------------------------------------------------
+
+2. `tarifas.html`
+<html lang="es">
+└── <body>
+    ├── <header id="header" class="normal">
+    │   ├── <h1> Tarifas del alquiler[cite: 11]
+    │   ├── <h2> ACA PUEDES VER CUANTO VALE CADA SERVICIO...[cite: 11]
+    │   ├── <p> <img> Métodos de pago[cite: 11]
+    │   └── <nav id="menu">
+    │       ├── Enlace: tarifas[cite: 11]
+    │       ├── Enlace: Ir a la pagina principal[cite: 11]
+    │       └── Enlace: puedes reservar aqui[cite: 11]
+    │
+    ├── <main>
+    │   ├── <section>
+    │   │   └── <table id="table">
+    │   │       ├── <h2><caption>Tarifas de alquiler</caption></h2>[cite: 11]
+    │   │       ├── <thead> Columnas (Tipo de bicicleta, 1 hora, Media día, Día completo)[cite: 11]
+    │   │       └── <tbody> Filas con precios de Urbana, Montaña y Eléctrica[cite: 11]
+    │   │
+    │   ├── <aside>
+    │   │   ├── Información de cascos, candados y hora de salida de recorridos[cite: 11]
+    │   │   └── <ol> Qué llevar (ropa cómoda, agua, protector solar, documento de identidad)[cite: 11]
+    │   │
+    │   ├── <section>
+    │   │   └── <table id="table">
+    │   │       ├── <caption>Tarifas de recorridos[cite: 11]
+    │   │       ├── <thead> Columnas (Recorrido, Distancia, Duración, Nivel, Precio por persona)[cite: 11]
+    │   │       └── <tbody> Filas con datos de Río y Parques, Sabores de barrio y Reto las Palmas[cite: 11]
+    │   │
+    │   └── Enlace: Reservar ahora (botón)[cite: 11]
+    │
+    └── <footer>
+        ├── Botón flotante: WhatsApp[cite: 11]
+        ├── <div> 2026 sebastian ortega . Todos los derechos reservados[cite: 11]
+        └── <ul>
+            ├── <li> Rueda libre[cite: 11]
+            └── <li> 2026[cite: 11]
+
+
+-------------------------------------------------------------------------------
+3. `reservas.html`
+<html lang="es">
+└── <body>
+    ├── <header id="header" class="normal">
+    │   ├── <h1> Reservas[cite: 10]
+    │   ├── <p> <img> Imagen de reserva[cite: 10]
+    │   ├── <h2> Instrucción de reserva[cite: 10]
+    │   ├── <p> Acceso rapido[cite: 10]
+    │   └── <nav>
+    │       └── <section id="menu">
+    │           ├── Enlace: reservas[cite: 10]
+    │           ├── Enlace: Inicio[cite: 10]
+    │           ├── Enlace: Tarifas y Rutas[cite: 10]
+    │           └── Enlace: Reservas[cite: 10]
+    │
+    ├── <aside>
+    │   ├── <h2> Contacto[cite: 10]
+    │   ├── <h3> Pregunta o información[cite: 10]
+    │   └── Enlace: hola@ruedalibre.example (botón)[cite: 10]
+    │
+    ├── <main>
+    │   ├── <section>
+    │   │   └── <table class="tabla-horarios">
+    │   │       ├── <thead> Horarios (Lunes a Viernes / Sábados, Domingos y Festivos)[cite: 10]
+    │   │       └── <tbody>[cite: 10]
+    │   │
+    │   └── <section id="formulario-reserva">
+    │       ├── <h2> Formulario de reserva[cite: 10]
+    │       └── <form>
+    │           ├── <fieldset> Tus datos (Nombre, Apellido, Email, Cédula)[cite: 10]
+    │           ├── <fieldset> Cantidad de bicicletas[cite: 10]
+    │           ├── <fieldset> Tipo de bicicleta y Duración del alquiler[cite: 10]
+    │           ├── <fieldset> Teléfono[cite: 10]
+    │           ├── <fieldset> Fecha de reservación[cite: 10]
+    │           ├── <fieldset> Confirmación (Datos y Términos y condiciones)[cite: 10]
+    │           ├── <fieldset> Comentarios[cite: 10]
+    │           ├── <fieldset> Confirmación adicional[cite: 10]
+    │           └── <button> Reservar[cite: 10]
+    │
+    └── <footer>
+        ├── Botón flotante: WhatsApp[cite: 10]
+        ├── <div> 2026 sebastian ortega . Todos los derechos reservados[cite: 10]
+        └── <ul>
+            ├── <li> Rueda libre[cite: 10]
+            └── <li> 2026[cite: 10]
+
+
 Tablas de pruebas 
 |--------------------------------------------------------------------------------------------------|
 |   | Campo          | Dato de prueba     | Resultado esperado          | Resultado obtenido       |
@@ -112,10 +279,12 @@ mapa de uso de color
 +----------------------------------------------------------------------------------------------+
 
 
-MI PAGINA WEB
+MI PAGINA WEB (githubpages)
 
->
+https://juansebastianortegamesa-ai.github.io/ruedalibre-retos-del-curso-html/
 
+
+#dia 3
 
 PARA QUE SIRVE EL BOX-sizing:
 
@@ -125,6 +294,17 @@ el ancho y alto asignados en CSS aplican solo al contenido. El padding y el bord
 Con border-box:
  el padding y el border se incluyen dentro de las dimensiones definidas en CSS. 
  El navegador reduce el espacio interno para respetar el tamaño fijado, ajustando la tarjeta a 517.984 × 400 px.
+
+
+Cierre de la Semana 1 y Registro de Aprendizajes
+
+Estructura y Semántica: Se comprendió el valor de maquetar con etiquetas nativas de HTML5, asegurando un documento ordenado y fácil de interpretar tanto para navegadores como para motores de búsqueda
+
+Formularios robustos: Se implementaron controles de entrada con validación nativa sin necesidad de código externo, protegiendo la integridad de la información que ingresa el usuario
+
+Control del diseño CSS: Se dominó el uso del Modelo de Caja mediante border-box y se estructuró un sistema de diseño basado en la teoría del color y accesibilidad bajo la norma WCAG
+
+SEMANA 2
 
 
 

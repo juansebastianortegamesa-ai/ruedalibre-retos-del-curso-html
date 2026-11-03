@@ -256,4 +256,18 @@ article.Bicicleta li {
     outline-offset: 2px;
 }
 
+/* para aviso de nuevo */
+.Bicicleta li {
+    position: relative;
+}
 
+.nuevo {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: var(--color-naranja-pedal); 
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
