@@ -1,6 +1,7 @@
-/* esto sirve pa que  no se desborde la pagina*/
- *::before, *::after {
+*, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
@@ -9,80 +10,120 @@
     --color-azul-noche: #14213D;
     --color-crema: #FAF6EF;
     --color-gris-asfalto: #5B6470;
-    --color-negro:#050505;
+    --color-negro: #050505;
 
     --font-titulos: 'Montserrat', Arial, sans-serif;
     --font-textos: 'Open Sans', Arial, sans-serif;
 
-     --espaciado-s: 0.5rem;
+    --espaciado-s: 0.5rem;
     --espaciado-m: 1rem;
     --espaciado-l: 1.5rem;
 }
 
-/* como se va  a ver el cuerpo de la pagina*/
-body{
+/* Cuerpo */
+body {
     background-color: var(--color-crema);
     color: var(--color-azul-noche);
     font-family: var(--font-textos);
     max-width: 75rem;
-    margin: 0 auto;   
+    margin: 0 auto;
     padding: 0 1rem;
-    h2{font-size: 1.70rem; font-family: var(--font-titulos);}
-    h3{font-size:1.10rem ; font-family: var(--font-titulos);}
-    p{font-family:var(--font-textos) ; font-size: 1.2rem ;}}
+}
+body h2 { font-size: 1.70rem; font-family: var(--font-titulos); }
+body h3 { font-size: 1.10rem; font-family: var(--font-titulos); }
+body p  { font-family: var(--font-textos); font-size: 1.2rem; }
 
 main {
-    max-width: 100rem; 
-    margin: 0 auto;   
+    max-width: 100rem;
+    margin: 0 auto;
     padding: var(--espaciado-m);
 }
 
-img{
-    align-items: center;
+img {
     max-width: 100%;
     height: auto;
     display: block;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));}
+}
 
-/*centrar fotos*/
 .img-centrada {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-
-
-/* este es para el global*/
-header{
-    min-width: 70vh;
-    padding: 1.5rem 1.5rem;
+.imglogo1{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-family: var(--font-titulos);
-    color: var(--color-azul-noche);   
-    font-size: 2.0rem; 
-}
-
-/*este es para solo la portada del inicio*/
-#header.inicio_1{
-    min-height: 100vh; 
     justify-content: center;
+    align-content: center;
+    }
+
+/* header solo de la principal */
+
+.inicio-header,
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--espaciado-m);
+    padding: var(--espaciado-m) 0;
     font-family: var(--font-titulos);
     color: var(--color-azul-noche);
-    font-size: 2.0rem ;
 }
-#header div {
+
+header.normal {
+    min-height: auto;
+}
+
+header.inicio_1 {
+    min-height: 70vh;
+    font-size: 2rem;
+}
+
+/* pa que se ponga verde el menu (tambien borre .links pq no hacia nada) */ 
+#menu {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--espaciado-m);
+    margin: 0;
+    padding: 0;
 }
 
+#menu a {
+    color: var(--color-gris-asfalto);
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 400;
+    margin: 0;
+}
+#menu a.activo { color: var(--color-verde-ruta); font-weight: 600; }
+#menu a:hover  { text-decoration: underline; color: var(--color-verde-ruta); }
+#menu a:focus  { color: var(--color-verde-ruta); }
 
-/* como se van a ver las tablas*/
-#table, .tabla-horarios {
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--espaciado-l);
+    padding: var(--espaciado-l) 0;
+    margin-top: var(--espaciado-l);
+    border-top: 1px solid var(--color-gris-asfalto);
+}
+footer > * {
+    flex: 1 1 200px;
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* como se van a ver las tablas */
+#tabla-bicis,
+#tabla-rutas,
+.tabla-horarios {
     width: 100%;
     max-width: 80rem;
     margin: 2rem auto;
@@ -91,40 +132,25 @@ header{
     background-color: #ffffff;
 }
 th, td {
-    border: 1px solid var(--color-negro); 
+    border: 1px solid var(--color-negro);
     padding: 1.25rem 1.25rem;
     text-align: left;
-    color: var(--color-azul-noche); 
+    color: var(--color-azul-noche);
 }
 th {
     background-color: var(--color-verde-ruta);
-    color: #ffffff; 
+    color: #ffffff;
     font-size: 1.15rem;
     font-weight: bold;
 }
 tr:nth-child(even) {
-    background-color: var(--color-crema); /* Usa tu color crema corporativo */
+    background-color: var(--color-crema);
 }
 
-/*dejar menu activo*/
-
-#menu a { color: var(--color-gris-asfalto);  
-cursor: pointer; text-decoration: none; font-weight: 400; }
-
-#menu a.activo { color: var(--color-verde-ruta); font-weight: 600; }
-#menu a:hover  { 
-    text-decoration: underline; color:#1E7A4F;
-    color: var(--color-verde-ruta)}    
-
-#menu a:focus{
-    color: var(--color-verde-ruta)
-}
-
-
-/* pal boton de reservar ahora*/
-.btn-reserva{
+/* Botón reservar */
+.btn-reserva {
     background-color: var(--color-verde-ruta);
-    color:  var(--color-crema);
+    color: var(--color-crema);
     border: none;
     padding: 0.5rem 1rem;
     text-align: center;
@@ -132,111 +158,114 @@ cursor: pointer; text-decoration: none; font-weight: 400; }
     display: inline-block;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;}
-
+    transition: background-color 0.3s ease;
+}
 .btn-reserva:hover {
     background-color: var(--color-naranja-pedal);
-    color: var(--color-crema);}
-
+    color: var(--color-crema);
+}
 .btn-reserva:focus {
     color: var(--color-naranja-pedal);
-    text-decoration: none;}
+    text-decoration: none;
+}
 
-    
-/* pal formulario  y los links */ 
+/* Formularios */
+
 input:focus, textarea:focus, select:focus {
-    outline: none; 
+    outline: none;
     border: 2px solid var(--color-naranja-pedal);
-    box-shadow: var(--color-naranja-pedal) 1px 1px 1px;}
- 
+    box-shadow: var(--color-naranja-pedal) 1px 1px 1px;
+}
 a:focus, button:focus, input:focus, textarea:focus {
     outline: 3px solid var(--color-naranja-pedal);
-    outline-offset: 2px;}    
-
+    outline-offset: 2px;
+}
 fieldset {
     margin-bottom: 1.5rem;
     padding: 1rem;
     border: 1px solid var(--color-gris-asfalto);
     border-radius: 0.375rem;
-    box-sizing: border-box;
-    width: 100%;}
-
+    width: 100%;
+}
 form label {
     display: block;
     margin-bottom: 0.5rem;
     color: var(--color-azul-noche);
-    font-weight: 600;}
-
-select,
-input,
-textarea {display: block; 
+    font-weight: 600;
+}
+select, input, textarea {
+    display: block;
     box-sizing: border-box;
     padding: 0.75rem;
     border-radius: 0.25rem;
     border: 1px solid var(--color-negro);
     background-color: var(--color-crema);
-    width: 100%; }
+    width: 100%;
+}
+select { margin-bottom: 0.5rem; }
 
-select {margin-bottom: 0.5rem;}
 
+/*para que los check box no esten re grandes */
 
-/*esto pa que los check boxes no sean re grandes*/
 input[type="checkbox"] {
     display: inline-block;
     width: auto;
-    margin-right: 0.5rem;}
-
+    margin-right: 0.5rem;
+}
 textarea {
     height: 10rem;
-    resize: vertical;}
-
-input[type="checkbox"] {
-    display: inline-block;
-    width: auto;}
-textarea {
-    height: 10rem;}
-
-
-/*los articulos*/
-article .Bicicleta {
-    font-family: var(--font-textos);
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-article.Bicicleta ol {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem; 
+    resize: vertical;
 }
 
-article.Bicicleta li {
+
+/*los productos y las rutas (quite la mayoria de .Bicicleta que tenia antes Xdd)  */
+.productos-grid,
+.rutas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaciado-l);
+    justify-content: center;
+
+}
+.card {
+    flex: 1 1 260px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--espaciado-m);
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    position: relative;
+}
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    border-radius: 4px;
+}
+
+.servicios li{
     background-color: var(--color-crema); 
     border: 1px solid var(--color-gris-asfalto);
     border-radius: 8px;     
     padding: 1rem;          
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
-   article.Bicicleta img {
-    width: 100%;    
-    height: 220px;         
-    object-fit: contain;   
-    object-position: center; 
-    display: block;
-    border-radius: 4px;
-}
 
+.card .btn-reserva { margin-top: auto; }
 
-/*boton whatsApp*/
-.whatsapp-BOTON{
+/* el bton de watsap*/
+
+.whatsapp-BOTON {
     position: fixed;
     bottom: 1.5rem;
     right: 1.5rem;
-    background-color: #25D366; 
+    background-color: #25D366;
     color: #ffffff;
     padding: 0.5rem 1.5rem;
     border-radius: 3.125rem;
@@ -248,24 +277,19 @@ article.Bicicleta li {
     align-items: center;
     gap: 0.5rem;
 }
-
-.whatsapp-flotante:hover,
-.whatsapp-flotante:focus {
+.whatsapp-BOTON:hover,
+.whatsapp-BOTON:focus {
     background-color: #1ebe5d;
-    outline: 2px solid #14213D; 
+    outline: 2px solid #14213D;
     outline-offset: 2px;
 }
 
-/* para aviso de nuevo */
-.Bicicleta li {
-    position: relative;
-}
-
+/* Aviso nuevo */
 .nuevo {
     position: absolute;
     top: 0.75rem;
     right: 0.75rem;
-    background-color: var(--color-naranja-pedal); 
+    background-color: var(--color-naranja-pedal);
     padding: 0.5rem 1rem;
     border-radius: 5px;
     font-weight: bold;
