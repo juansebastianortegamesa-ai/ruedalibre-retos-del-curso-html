@@ -51,15 +51,14 @@ img {
     margin-right: auto;
 }
 
-.imglogo1{
+.imglogo1 {
     display: flex;
     justify-content: center;
     align-content: center;
-    }
+}
 
-/* header solo de la principal */
-
-.inicio-header,
+/* Header global */
+.site-header,
 header {
     display: flex;
     justify-content: space-between;
@@ -80,7 +79,7 @@ header.inicio_1 {
     font-size: 2rem;
 }
 
-/* pa que se ponga verde el menu (tambien borre .links pq no hacia nada) */ 
+/* Menú */
 #menu {
     display: flex;
     flex-wrap: wrap;
@@ -100,7 +99,7 @@ header.inicio_1 {
 #menu a:hover  { text-decoration: underline; color: var(--color-verde-ruta); }
 #menu a:focus  { color: var(--color-verde-ruta); }
 
-
+/* Footer global: 3 bloques (marca, contacto, horario) */
 footer {
     display: flex;
     justify-content: space-between;
@@ -111,16 +110,28 @@ footer {
     margin-top: var(--espaciado-l);
     border-top: 1px solid var(--color-gris-asfalto);
 }
-footer > * {
+
+.footer-bloque {
     flex: 1 1 200px;
 }
+
+.footer-bloque h3 {
+    color: var(--color-verde-ruta);
+    margin-bottom: var(--espaciado-s);
+}
+
+.footer-bloque p {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
 footer ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* como se van a ver las tablas */
+/* Tablas */
 #tabla-bicis,
 #tabla-rutas,
 .tabla-horarios {
@@ -170,7 +181,6 @@ tr:nth-child(even) {
 }
 
 /* Formularios */
-
 input:focus, textarea:focus, select:focus {
     outline: none;
     border: 2px solid var(--color-naranja-pedal);
@@ -204,9 +214,6 @@ select, input, textarea {
 }
 select { margin-bottom: 0.5rem; }
 
-
-/*para que los check box no esten re grandes */
-
 input[type="checkbox"] {
     display: inline-block;
     width: auto;
@@ -217,15 +224,13 @@ textarea {
     resize: vertical;
 }
 
-
-/*los productos y las rutas (quite la mayoria de .Bicicleta que tenia antes Xdd)  */
+/* Productos y rutas (Flexbox) */
 .productos-grid,
 .rutas-grid {
     display: flex;
     flex-wrap: wrap;
     gap: var(--espaciado-l);
     justify-content: center;
-
 }
 .card {
     flex: 1 1 260px;
@@ -239,6 +244,7 @@ textarea {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     position: relative;
+    background-color: #ffffff;
 }
 .card img {
     width: 100%;
@@ -248,19 +254,22 @@ textarea {
     display: block;
     border-radius: 4px;
 }
+.card .btn-reserva { margin-top: auto; }
 
-.servicios li{
+/* Servicios */
+.servicios {
+    margin-bottom: var(--espaciado-l);
+}
+.servicios li {
     background-color: var(--color-crema); 
     border: 1px solid var(--color-gris-asfalto);
     border-radius: 8px;     
     padding: 1rem;          
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: var(--espaciado-s);
 }
 
-.card .btn-reserva { margin-top: auto; }
-
-/* el bton de watsap*/
-
+/* WhatsApp */
 .whatsapp-BOTON {
     position: fixed;
     bottom: 1.5rem;
@@ -294,4 +303,47 @@ textarea {
     border-radius: 5px;
     font-weight: bold;
     font-size: 0.85rem;
+}
+
+/* Grid de la flota */
+.flota-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--espaciado-l);
+    margin-top: var(--espaciado-m);
+}
+
+.card-flota {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 8px;
+    padding: var(--espaciado-m);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.card-flota img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: var(--espaciado-s);
+}
+
+.card-flota .precio {
+    font-weight: bold;
+    color: var(--color-verde-ruta);
+    margin-bottom: var(--espaciado-m);
+    font-size: 1.1rem;
+}
+
+.card-flota .btn-reserva {
+    margin-top: auto; 
+    width: 100%; 
+}
+
+/* Ocultar título duplicado en tarjetas */
+.card h3:last-of-type, .card-flota h3:nth-of-type(2) {
+    margin-bottom: var(--espaciado-s);
 }
