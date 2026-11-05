@@ -179,6 +179,19 @@ input[type="checkbox"] { display: inline-block; width: auto; margin-right: 0.5re
     position: relative;
 }
 
+.nuevo {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    z-index: 10;
+}
+
 .card img, .card-flota img { width: 100%; height: 200px; object-fit: contain; margin-bottom: var(--espaciado-s); }
 .card .btn-reserva, .card-flota .btn-reserva { margin-top: auto; width: 100%; }
 
