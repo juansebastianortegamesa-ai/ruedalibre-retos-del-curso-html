@@ -2,35 +2,33 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content=" width=device-width, initial-scale=1.0">
-    <meta name="desciption" content="Tarifas">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tarifas de alquiler de bicicletas en Rueda Libre.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-
-    <title>TARIFAS DEL ALQUILER</title>
+    <title>Tarifas | Rueda Libre</title>
 </head>
-    <header id="header" class="normal" >
-        <h1>Tarifas del alquiler</h1>
-        <h2>ACA PUEDES VER CUANTO VALE CADA SERVICIO Y QUE PLAN SE ACOPLA MAS A TU GUSTO</h2>
-        <p>
-        <img src="../img/metodosdepago.png" width="400" height="400" ></a>
-        </p>
+<body>
+        <header id="header" class="normal site-header">
+        <div>
+            <h1>Tarifas del alquiler</h1>
+            <p>
+                <img src="../img/metodosdepago.png" alt="Métodos de pago" width="300" height="300" class="img-centrada">
+            </p>
+        </div>
         <nav id="menu">
-            <a class="activo" href="tarifas.html">tarifas</a>
-            <a href="../index.html">Ir a la pagina principal</a>
-            <a href="reservas.html">puedes reservar aqui</a>
+            <a class="activo" href="tarifas.html">Tarifas</a>
+            <a href="../index.html">Ir a la página principal</a>
+            <a href="reservas.html">Puedes reservar aquí</a>
         </nav>
     </header>
-<body>
+
     <main>
-        <section>
-            <table id="table">
-                <h2><caption>Tarifas de alquiler</caption></h2>
+        <section class="seccion">
+            <table id="tabla-bicis">
+                <caption>Tarifas de alquiler</caption>
                 <thead>
                     <tr>
                         <th scope="col">Tipo de bicicleta</th>
@@ -62,20 +60,19 @@
             </table>
         </section>
 
-        <aside>
-            Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las 7:00 a. m.
-            Qué llevar: 
-            
+        <aside class="seccion">
+            <p>Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las 7:00 a. m.</p>
+            <p>Qué llevar:</p>
             <ol>
-                <li>ropa cómoda</li>
-                <li>   agua  </li>
-                <li> protector solar</li>
-                <li>  documento de identidad.</li>
+                <li>Ropa cómoda</li>
+                <li>Agua</li>
+                <li>Protector solar</li>
+                <li>Documento de identidad</li>
             </ol>
         </aside>
 
-        <section>
-            <table id="table">
+        <section class="seccion">
+            <table id="tabla-rutas">
                 <caption>Tarifas de recorridos</caption>
                 <thead>
                     <tr>
@@ -95,42 +92,47 @@
                         <td>$45.000</td>
                     </tr>
                     <tr>
-                        <td>sabores de barrio</td>
+                        <td>Sabores de Barrio</td>
                         <td>18 km</td>
                         <td>3h</td>
-                        <td>facil</td>
+                        <td>Fácil</td>
                         <td>$60.000</td>
                     </tr>
                     <tr>
-                        <td>Reto las Palmas</td>
-                        <td>25km</td>
+                        <td>Reto Las Palmas</td>
+                        <td>25 km</td>
                         <td>4h</td>
-                        <td>Dificil</td>
+                        <td>Difícil</td>
                         <td>$85.000</td>
                     </tr>
                 </tbody>
-                </table>
+            </table>
         </section>
-         <footer>
-    <div class="footer-bloque">
-      <h3>Rueda Libre</h3>
-      <p>Alquiler de bicicletas en Medellín.</p>
-    </div>
+        
+        <div class="seccion" style="text-align: center;">
+            <a href="reservas.html" class="btn-reserva">Reservar ahora</a>
+        </div>
+    </main>
 
-    <div class="footer-bloque">
-      <h3>Contacto</h3>
-      <p>hola@ruedalibre@gmail.com</p>
-      <p>+57 300 000 0000</p>
-    </div>
+    <footer>
+        <div class="footer-bloque">
+            <h3>Rueda Libre</h3>
+            <p>Alquiler de bicicletas en Medellín.</p>
+        </div>
 
-    <div class="footer-bloque">
-      <h3>Horario</h3>
-      <p>Lun - Vie: 7:00 am - 7:00 pm</p>
-      <p>Sáb - Dom: 6:00 am - 2:00 pm</p>
-    </div>
+        <div class="footer-bloque">
+            <h3>Contacto</h3>
+            <p>hola@ruedalibre@gmail.com</p>
+            <p>+57 300 000 0000</p>
+        </div>
 
-    <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-BOTON" aria-label="Chatear por WhatsApp">WhatsApp</a>
-  </footer>
+        <div class="footer-bloque">
+            <h3>Horario</h3>
+            <p>Lun - Vie: 7:00 am - 7:00 pm</p>
+            <p>Sáb - Dom: 6:00 am - 2:00 pm</p>
+        </div>
+
+        <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-BOTON" aria-label="Chatear por WhatsApp">WhatsApp</a>
+    </footer>
 </body>
 </html>
-     

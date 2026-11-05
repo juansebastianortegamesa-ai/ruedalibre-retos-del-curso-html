@@ -20,7 +20,7 @@
     --espaciado-l: 1.5rem;
 }
 
-/* Cuerpo */
+/* Cuerpo  del Mobile First */
 body {
     background-color: var(--color-crema);
     color: var(--color-azul-noche);
@@ -29,14 +29,14 @@ body {
     margin: 0 auto;
     padding: 0 1rem;
 }
-body h2 { font-size: 1.70rem; font-family: var(--font-titulos); }
-body h3 { font-size: 1.10rem; font-family: var(--font-titulos); }
-body p  { font-family: var(--font-textos); font-size: 1.2rem; }
+body h2 { font-size: 1.50rem; font-family: var(--font-titulos); margin-bottom: 1rem; }
+body h3 { font-size: 1.10rem; font-family: var(--font-titulos); margin-bottom: 0.5rem; }
+body p  { font-family: var(--font-textos); font-size: 1.1rem; margin-bottom: 1rem; }
 
 main {
     max-width: 100rem;
     margin: 0 auto;
-    padding: var(--espaciado-m);
+    padding: var(--espaciado-m) 0;
 }
 
 img {
@@ -51,38 +51,27 @@ img {
     margin-right: auto;
 }
 
-.imglogo1 {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
-/* Header global */
+/* el header del mobile fist */
 .site-header,
 header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     gap: var(--espaciado-m);
     padding: var(--espaciado-m) 0;
     font-family: var(--font-titulos);
     color: var(--color-azul-noche);
+    text-align: center;
 }
 
-header.normal {
-    min-height: auto;
-}
+header.normal { min-height: auto; }
+header.inicio_1 { min-height: auto; padding: var(--espaciado-l) 0; }
 
-header.inicio_1 {
-    min-height: 70vh;
-    font-size: 2rem;
-}
 
-/* Menú */
 #menu {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     gap: var(--espaciado-m);
     margin: 0;
     padding: 0;
@@ -93,72 +82,49 @@ header.inicio_1 {
     cursor: pointer;
     text-decoration: none;
     font-weight: 400;
+    font-size: 1rem; /* Tamaño controlado para que no sea gigante */
     margin: 0;
 }
 #menu a.activo { color: var(--color-verde-ruta); font-weight: 600; }
 #menu a:hover  { text-decoration: underline; color: var(--color-verde-ruta); }
-#menu a:focus  { color: var(--color-verde-ruta); }
 
-/* Footer global: 3 bloques (marca, contacto, horario) */
+/* --- FOOTER --- */
 footer {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: var(--espaciado-l);
     padding: var(--espaciado-l) 0;
     margin-top: var(--espaciado-l);
     border-top: 1px solid var(--color-gris-asfalto);
+    text-align: center;
 }
 
-.footer-bloque {
-    flex: 1 1 200px;
-}
+.footer-bloque h3 { color: var(--color-verde-ruta); margin-bottom: var(--espaciado-s); }
+.footer-bloque p { font-size: 1rem; margin-bottom: 0.25rem; }
 
-.footer-bloque h3 {
-    color: var(--color-verde-ruta);
-    margin-bottom: var(--espaciado-s);
-}
-
-.footer-bloque p {
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Tablas */
-#tabla-bicis,
-#tabla-rutas,
-.tabla-horarios {
+/* --- TABLAS --- */
+#tabla-bicis, #tabla-rutas, .tabla-horarios {
     width: 100%;
     max-width: 80rem;
-    margin: 2rem auto;
+    margin: 1rem auto;
     border-collapse: collapse;
-    font-size: 1.1rem;
+    font-size: 0.85rem;
     background-color: #ffffff;
-}
-th, td {
-    border: 1px solid var(--color-negro);
-    padding: 1.25rem 1.25rem;
-    text-align: left;
-    color: var(--color-azul-noche);
-}
-th {
-    background-color: var(--color-verde-ruta);
-    color: #ffffff;
-    font-size: 1.15rem;
-    font-weight: bold;
-}
-tr:nth-child(even) {
-    background-color: var(--color-crema);
+    display: block;
+    overflow-x: auto; 
 }
 
-/* Botón reservar */
+th, td {
+    border: 1px solid var(--color-negro);
+    padding: 0.5rem;
+    text-align: left;
+    color: var(--color-azul-noche);
+    white-space: nowrap;
+}
+th { background-color: var(--color-verde-ruta); color: #ffffff; font-weight: bold; }
+tr:nth-child(even) { background-color: var(--color-crema); }
+
+/* --- BOTONES Y FORMULARIOS --- */
 .btn-reserva {
     background-color: var(--color-verde-ruta);
     color: var(--color-crema);
@@ -170,71 +136,36 @@ tr:nth-child(even) {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border-radius: 4px;
 }
-.btn-reserva:hover {
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-crema);
-}
-.btn-reserva:focus {
-    color: var(--color-naranja-pedal);
-    text-decoration: none;
-}
+.btn-reserva:hover { background-color: var(--color-naranja-pedal); color: var(--color-crema); }
 
-/* Formularios */
 input:focus, textarea:focus, select:focus {
     outline: none;
     border: 2px solid var(--color-naranja-pedal);
     box-shadow: var(--color-naranja-pedal) 1px 1px 1px;
 }
-a:focus, button:focus, input:focus, textarea:focus {
-    outline: 3px solid var(--color-naranja-pedal);
-    outline-offset: 2px;
-}
-fieldset {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 0.375rem;
-    width: 100%;
-}
-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--color-azul-noche);
-    font-weight: 600;
-}
+
+fieldset { margin-bottom: 1.5rem; padding: 1rem; border: 1px solid var(--color-gris-asfalto); border-radius: 0.375rem; width: 100%; }
+form label { display: block; margin-bottom: 0.5rem; color: var(--color-azul-noche); font-weight: 600; }
 select, input, textarea {
     display: block;
-    box-sizing: border-box;
     padding: 0.75rem;
     border-radius: 0.25rem;
     border: 1px solid var(--color-negro);
     background-color: var(--color-crema);
     width: 100%;
 }
-select { margin-bottom: 0.5rem; }
+input[type="checkbox"] { display: inline-block; width: auto; margin-right: 0.5rem; }
 
-input[type="checkbox"] {
-    display: inline-block;
-    width: auto;
-    margin-right: 0.5rem;
-}
-textarea {
-    height: 10rem;
-    resize: vertical;
-}
-
-/* Productos y rutas (Flexbox) */
-.productos-grid,
-.rutas-grid {
-    display: flex;
-    flex-wrap: wrap;
+/* --- GRILLAS Y TARJETAS --- */
+.productos-grid, .rutas-grid, .flota-grid {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--espaciado-l);
-    justify-content: center;
 }
-.card {
-    flex: 1 1 260px;
-    max-width: 320px;
+
+.card, .card-flota {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -243,107 +174,99 @@ textarea {
     border: 1px solid var(--color-gris-asfalto);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    position: relative;
     background-color: #ffffff;
+    position: relative;
 }
-.card img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-    border-radius: 4px;
-}
-.card .btn-reserva { margin-top: auto; }
 
-/* Servicios */
+.card img, .card-flota img { width: 100%; height: 200px; object-fit: contain; margin-bottom: var(--espaciado-s); }
+.card .btn-reserva, .card-flota .btn-reserva { margin-top: auto; width: 100%; }
+
+
 .servicios {
+    list-style-position: inside; /* Mantiene los números dentro de la tarjeta */
     margin-bottom: var(--espaciado-l);
+    padding: 0;
 }
+
 .servicios li {
-    background-color: var(--color-crema); 
+    background-color: #ffffff; /* Fondo blanco para que resalte */
     border: 1px solid var(--color-gris-asfalto);
-    border-radius: 8px;     
-    padding: 1rem;          
+    border-radius: 8px;        /* Borde redondo */
+    padding: 1rem;
+    margin-bottom: 0.75rem;    /* Separación entre tarjetas */
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    margin-bottom: var(--espaciado-s);
+    font-family: var(--font-textos);
+    font-size: 1rem;
+}
+
+/* Layout de Reservas y Portada */
+.hero-grid, .reservas-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-l);
+}
+
+.fila-campos {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 /* WhatsApp */
 .whatsapp-BOTON {
     position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
+    bottom: 1rem;
+    right: 1rem;
     background-color: #25D366;
     color: #ffffff;
-    padding: 0.5rem 1.5rem;
-    border-radius: 3.125rem;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
     text-decoration: none;
     font-weight: 600;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-.whatsapp-BOTON:hover,
-.whatsapp-BOTON:focus {
-    background-color: #1ebe5d;
-    outline: 2px solid #14213D;
-    outline-offset: 2px;
 }
 
-/* Aviso nuevo */
-.nuevo {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    background-color: var(--color-naranja-pedal);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 0.85rem;
+/*  MEDIA QUERIES (Tablet: 768px) */
+@media (min-width: 768px) {
+    /* Header en fila */
+    .site-header, header {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    
+    #menu {
+        flex-direction: row; 
+        gap: var(--espaciado-l); 
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .productos-grid, .rutas-grid { grid-template-columns: repeat(2, 1fr); }
+    .flota-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .hero-grid { grid-template-columns: 1fr 1fr; align-items: center; }
+    .reservas-layout { grid-template-columns: 2fr 1fr; align-items: start; }
+    
+    .fila-campos { flex-direction: row; gap: var(--espaciado-m); }
+    .fila-campos p { flex: 1; }
+
+    #tabla-bicis, #tabla-rutas, .tabla-horarios { font-size: 1rem; display: table; }
+    th, td { padding: 1rem; white-space: normal; }
+    
+    /* En tablet, la lista de servicios se ve bien más grande */
+    .servicios li { font-size: 1.1rem; padding: 1.25rem; }
 }
 
-/* Grid de la flota */
-.flota-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--espaciado-l);
-    margin-top: var(--espaciado-m);
-}
-
-.card-flota {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 8px;
-    padding: var(--espaciado-m);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    text-align: center;
-}
-
-.card-flota img {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    margin-bottom: var(--espaciado-s);
-}
-
-.card-flota .precio {
-    font-weight: bold;
-    color: var(--color-verde-ruta);
-    margin-bottom: var(--espaciado-m);
-    font-size: 1.1rem;
-}
-
-.card-flota .btn-reserva {
-    margin-top: auto; 
-    width: 100%; 
-}
-
-/* Ocultar título duplicado en tarjetas */
-.card h3:last-of-type, .card-flota h3:nth-of-type(2) {
-    margin-bottom: var(--espaciado-s);
+/* --- MEDIA QUERIES (Escritorio: 1200px) --- */
+@media (min-width: 1200px) {
+    .rutas-grid { grid-template-columns: repeat(3, 1fr); } 
+    .flota-grid { grid-template-columns: repeat(4, 1fr); } 
+    header.inicio_1 { min-height: 50vh; display: flex; align-items: center; }
 }

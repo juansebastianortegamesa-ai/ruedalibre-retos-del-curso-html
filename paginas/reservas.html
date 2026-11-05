@@ -1,126 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapfamilyis.com/css2?=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css" >
-  <title>RESERVAS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reserva tu bicicleta en Rueda Libre.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Reservas | Rueda Libre</title>
 </head>
+<body>
 
-    <Header id="header" class="normal">
-    <h1>Reservas</h1>
-    <p>
-       <img src="../img/reserva.png" width="400" height="400" ></a>
-    </p>
-     <h2>reservar una bicicleta, simplemente visita nuestra tienda en Medellín, elige el modelo que deseas y completa el proceso de reserva con nuestro personal.</h2>
-    <p>Acceso rapido</p>
-       <title>Reserva tu bicicleta</title>
-      <nav>
-    <section id="menu">
-        <a a href="reservas.html" class="activo" .links>reservas</a>
-        <a href="../index.html">Inicio</a>
-        <a href="tarifas.html">Tarifas y Rutas</a>
-        <a href="reservas.html">Reservas</a>
-    </section>
+    <header id="header" class="normal site-header">
+    <div>
+      <h1>Reservas</h1>
+      <p>
+        <img src="../img/reserva.png" alt="Reserva tu bicicleta" width="300" height="300" class="img-centrada">
+      </p>
+    </div>
+    <nav id="menu">
+      <a href="reservas.html" class="activo">Reservas</a>
+      <a href="../index.html">Inicio</a>
+      <a href="tarifas.html">Tarifas y Rutas</a>
     </nav>
-    </Header>
+  </header>
 
-    <aside>
-    <h2>Contacto</h2>
-    <h3>Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos a través de nuestro correo electrónico: </h3>
+  <div class="reservas-layout" style="padding: var(--espaciado-m); max-width: 100rem; margin: 0 auto;">
+    
 
-    <a href="hola@ruedalibre.example" class="btn-reserva">hola@ruedalibre.example</a>
-
-</aside>
-
-<main>
-<section>
-   <table class="tabla-horarios">
-    <thead>
-        <tr>
-            <th colspan="2">Horarios</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>Lunes a Viernes:</strong></td>
-            <td>7:00 am a 7:00 pm</td>
-        </tr>
-        <tr>
-            <td><strong>Sábados, Domingos y Festivos:</strong></td>
-            <td>6:00 am a 2:00 pm</td>
-        </tr>
+    <main class="formulario-main">
+      <section class="seccion">
+        <table class="tabla-horarios">
+          <thead>
+            <tr>
+              <th colspan="2">Horarios</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Lunes a Viernes:</strong></td>
+              <td>7:00 am a 7:00 pm</td>
+            </tr>
+            <tr>
+              <td><strong>Sábados, Domingos y Festivos:</strong></td>
+              <td>6:00 am a 2:00 pm</td>
+            </tr>
+          </tbody>
         </table>
-    </tbody>
-</section>
+      </section>
 
-<section id="formulario-reserva">
+      <section id="formulario-reserva" class="seccion">
         <h2>Formulario de reserva</h2>
-
         <form action="#" method="post">
+          
           <fieldset>
             <legend>Tus datos</legend>
             <p>
               <label for="nombre">Nombre:</label>
-              <input type="text" id="nombre" name="nombre" required minlength="3" 
-                pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+"
-                title= "porfavor introdusca su nombre recuerde que son solo con letras"/>
+              <input type="text" id="nombre" name="nombre" required minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Por favor introduce tu nombre, solo letras.">
             </p>
-
             <p>
-            <label for="apellido">apellido:</label>
-              <input type="text" id="apellido" name="apellido" required 
-                minlength="3" 
-                pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+"
-                title=" porfavor introducir su apellido recuerde Solo se permiten letras"/>
+              <label for="apellido">Apellido:</label>
+              <input type="text" id="apellido" name="apellido" required minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Por favor introduce tu apellido, solo letras.">
             </p>
-            
             <p>
               <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required 
-             pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-             placeholder="tucorreo@example.com"
-             title="Ingresa un correo válido, por ejemplo usuario@gmail.com"/>
+              <input type="email" id="email" name="email" required placeholder="tucorreo@example.com" title="Ingresa un correo válido.">
             </p>
-            <!--pattern="(?!1234567$)\d+$"  sirve para bloquear especificamente 1234567-->
-            <p>
-              <label for="cedula">cedula:</label>
-              <input type="text" id="cedula" name="cedula" required 
-              minlength="6"
-              maxlength="10"
-              pattern="(?!1234567$)\d+$"
-              pattern="[0-9]{7,10}" placeholder="Ej: 12345678"
-              title="secuencias como 123456 o -11111 no son validas,recuerde introducir su cedula correctamente"/>
-            </p>
+            
+            <!-- Fila de dos campos con Flexbox -->
+            <div class="fila-campos">
+              <p>
+                <label for="cedula">Cédula:</label>
+                <input type="text" id="cedula" name="cedula" required minlength="7" maxlength="10" pattern="[0-9]{7,10}" placeholder="Ej: 12345678" title="De 7 a 10 dígitos, solo números.">
+              </p>
+              <p>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{10}" placeholder="Ej: 3001234567" title="Exactamente 10 dígitos numéricos.">
+              </p>
+            </div>
           </fieldset>
 
           <fieldset>
-            </p>
+            <legend>Tu alquiler</legend>
             <p>
-              <label for="cantidad-bicicletas">cantidad de bicicletas:</label>
-              <input
-                type="number"
-                id="cantidad-bicicletas"
-                name="cantidad-bicicletas"
-                required
-                min="1"
-                max="6"
-                title="recuerde que el minimo es 1 bicicleta y el maximo 6"
-              />
+              <label for="cantidad-bicicletas">Cantidad de bicicletas:</label>
+              <input type="number" id="cantidad-bicicletas" name="cantidad-bicicletas" required min="1" max="6" title="Mínimo 1, máximo 6.">
             </p>
-          </fieldset>
-
-          <fieldset>
             <p>
               <label for="bicicleta">Tipo de bicicleta:</label>
-              <select id="bicicleta" name="bicicleta" required >
+              <select id="bicicleta" name="bicicleta" required>
                 <option value="">Selecciona un tipo</option>
                 <option value="urbana">Urbana</option>
                 <option value="montaña">Montaña</option>
@@ -136,85 +106,67 @@
                 <option value="1dia">Día completo</option>
               </select>
             </p>
-              </fieldset>
-
-             <fieldset>
-                <p>
-                <form action="tel" method="POST">
-                <label for="telefono">Telefono:</label>
-                <input  type="tel" id="telefono" name="telefono" 
-                required
-                pattern="(?!1234567$)\d+$"
-                placeholder="Ej:3001234567" pattern="[0-9]{10}"
-                title="recuerde no puede execeder mas de 10 digitos y solo en formato numerico"/>
-                </p>
-             </fieldset>
-
-            <fieldset>
             <p>
-            <label for="fechareserva">tu fecha de reservacion
-            <input type="date" name="fecha-reserva" required min="2026-11-01" max="2026-12-31"
-            title="porfavor introdusca una fecha valida de nuestros servicios"/>
-            </label>
-             </p>
+              <label for="fechareserva">Fecha de reservación:</label>
+              <input type="date" id="fechareserva" name="fecha-reserva" required min="2026-11-01" max="2026-12-31" title="Elige una fecha válida.">
+            </p>
           </fieldset>
-            <fieldset>
+
+          <fieldset>
+            <legend>Comentarios</legend>
+            <p>
+              <label for="comentarios">Comentarios:</label>
+              <input type="text" id="comentarios" name="comentarios" maxlength="300" placeholder="Escribe tus comentarios aquí...">
+            </p>
+          </fieldset>
+
+          <fieldset>
             <legend>Confirmación</legend>
             <p>
               <label for="confirmacion-datos">¿Confirma los datos?</label>
-              <input
-                type="checkbox"
-                id="confirmacion-datos"
-                name="confirmacion-datos"
-                required/>
+              <input type="checkbox" id="confirmacion-datos" name="confirmacion-datos" required>
             </p>
             <p>
-              <label for="confirmacion-terminos"
-                >¿Acepta los términos y condiciones de la empresa rueda libre</label
-              >
-              <input
-              type="checkbox" id="confirmacion-terminos"
-              name="confirmacion-terminos"
-              required/>
+              <label for="confirmacion-terminos">¿Acepta los términos y condiciones de Rueda Libre?</label>
+              <input type="checkbox" id="confirmacion-terminos" name="confirmacion-terminos" required>
             </p>
           </fieldset>
 
-          <fieldset>
-            <p>
-          <label for="comentarios">Comentarios:</label>
-              <input
-                type="text"
-                id="comentarios"
-                name="comentarios"
-                maxlength="300"
-                placeholder="Escribe tus comentarios aquí..."/>
-            </p>
-          <fieldset>
-
-            <legend>Confirmación</legend>
-            <p>
-              <label for="confirmacion">¿Confirma los datos?</label>
-              <input type="checkbox" id="confirmacion" name="confirmacion" />
-            </p>
-          <fieldset>
           <button type="submit" class="btn-reserva">Reservar</button>
         </form>
       </section>
-</main>
-<footer>
-    <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-BOTON" aria-label="Chatear por WhatsApp">
-      WhatsApp
-    </a>
-          <div>
-          2026 sebastian ortega . Todos los derechos reservados 
-        </div>
+    </main>
+
+    <aside class="contacto-aside">
+      <h2>Contacto</h2>
+      <h3>Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos a través de nuestro correo electrónico:</h3>
+      <p style="margin-top: 1rem;">
+        <a href="mailto:hola@ruedalibre.example" class="btn-reserva">hola@ruedalibre.example</a>
       </p>
-        <ul>
-            <li>Rueda libre</li>
-            <li>2026</li>
-        </ul>
-    </footer>
+    </aside>
+
+  </div>
+
+
+  <footer style="max-width: 100rem; margin: 0 auto; padding: 0 var(--espaciado-m);">
+    <div class="footer-bloque">
+      <h3>Rueda Libre</h3>
+      <p>Alquiler de bicicletas en Medellín.</p>
+    </div>
+
+    <div class="footer-bloque">
+      <h3>Contacto</h3>
+      <p>hola@ruedalibre@gmail.com</p>
+      <p>+57 300 000 0000</p>
+    </div>
+
+    <div class="footer-bloque">
+      <h3>Horario</h3>
+      <p>Lun - Vie: 7:00 am - 7:00 pm</p>
+      <p>Sáb - Dom: 6:00 am - 2:00 pm</p>
+    </div>
+
+    <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-BOTON" aria-label="Chatear por WhatsApp">WhatsApp</a>
+  </footer>
 </body>
 </html>
-
-<!--autocomplete="off">es para guardar los formularios-->
