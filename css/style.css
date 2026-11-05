@@ -28,6 +28,7 @@ body {
     max-width: 75rem;
     margin: 0 auto;
     padding: 0 1rem;
+    overflow-x: hidden; 
 }
 body h2 { font-size: 1.50rem; font-family: var(--font-titulos); margin-bottom: 1rem; }
 body h3 { font-size: 1.10rem; font-family: var(--font-titulos); margin-bottom: 0.5rem; }
@@ -49,9 +50,10 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    max-width: 80%; 
 }
 
-/* el header del mobile fist */
+/* Header en móvil */
 .site-header,
 header {
     display: flex;
@@ -67,7 +69,6 @@ header {
 header.normal { min-height: auto; }
 header.inicio_1 { min-height: auto; padding: var(--espaciado-l) 0; }
 
-
 #menu {
     display: flex;
     flex-direction: column;
@@ -82,13 +83,13 @@ header.inicio_1 { min-height: auto; padding: var(--espaciado-l) 0; }
     cursor: pointer;
     text-decoration: none;
     font-weight: 400;
-    font-size: 1rem; /* Tamaño controlado para que no sea gigante */
+    font-size: 1rem;
     margin: 0;
 }
 #menu a.activo { color: var(--color-verde-ruta); font-weight: 600; }
 #menu a:hover  { text-decoration: underline; color: var(--color-verde-ruta); }
 
-/* --- FOOTER --- */
+
 footer {
     display: flex;
     flex-direction: column;
@@ -102,7 +103,7 @@ footer {
 .footer-bloque h3 { color: var(--color-verde-ruta); margin-bottom: var(--espaciado-s); }
 .footer-bloque p { font-size: 1rem; margin-bottom: 0.25rem; }
 
-/* --- TABLAS --- */
+
 #tabla-bicis, #tabla-rutas, .tabla-horarios {
     width: 100%;
     max-width: 80rem;
@@ -158,7 +159,7 @@ select, input, textarea {
 }
 input[type="checkbox"] { display: inline-block; width: auto; margin-right: 0.5rem; }
 
-/* --- GRILLAS Y TARJETAS --- */
+/* GRIDS PARA LAS TARGETAS  */
 .productos-grid, .rutas-grid, .flota-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -181,19 +182,19 @@ input[type="checkbox"] { display: inline-block; width: auto; margin-right: 0.5re
 .card img, .card-flota img { width: 100%; height: 200px; object-fit: contain; margin-bottom: var(--espaciado-s); }
 .card .btn-reserva, .card-flota .btn-reserva { margin-top: auto; width: 100%; }
 
-
+/* Listas con estilo de tarjeta */
 .servicios {
-    list-style-position: inside; /* Mantiene los números dentro de la tarjeta */
+    list-style-position: inside;
     margin-bottom: var(--espaciado-l);
     padding: 0;
 }
 
 .servicios li {
-    background-color: #ffffff; /* Fondo blanco para que resalte */
+    background-color: #ffffff;
     border: 1px solid var(--color-gris-asfalto);
-    border-radius: 8px;        /* Borde redondo */
+    border-radius: 8px;
     padding: 1rem;
-    margin-bottom: 0.75rem;    /* Separación entre tarjetas */
+    margin-bottom: 0.75rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     font-family: var(--font-textos);
     font-size: 1rem;
@@ -227,9 +228,10 @@ input[type="checkbox"] { display: inline-block; width: auto; margin-right: 0.5re
     z-index: 1000;
 }
 
-/*  MEDIA QUERIES (Tablet: 768px) */
+/* MEDIA QUERIES (Tablet: 768px) */
 @media (min-width: 768px) {
-    /* Header en fila */
+    .img-centrada { max-width: 300px; }
+
     .site-header, header {
         flex-direction: row;
         justify-content: space-between;
@@ -260,13 +262,13 @@ input[type="checkbox"] { display: inline-block; width: auto; margin-right: 0.5re
     #tabla-bicis, #tabla-rutas, .tabla-horarios { font-size: 1rem; display: table; }
     th, td { padding: 1rem; white-space: normal; }
     
-    /* En tablet, la lista de servicios se ve bien más grande */
     .servicios li { font-size: 1.1rem; padding: 1.25rem; }
 }
 
-/* --- MEDIA QUERIES (Escritorio: 1200px) --- */
+/* MEDIA QUERIES (Escritorio: 1200px)*/
 @media (min-width: 1200px) {
     .rutas-grid { grid-template-columns: repeat(3, 1fr); } 
     .flota-grid { grid-template-columns: repeat(4, 1fr); } 
     header.inicio_1 { min-height: 50vh; display: flex; align-items: center; }
 }
+

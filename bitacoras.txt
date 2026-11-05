@@ -304,7 +304,56 @@ Formularios robustos: Se implementaron controles de entrada con validación nati
 
 Control del diseño CSS: Se dominó el uso del Modelo de Caja mediante border-box y se estructuró un sistema de diseño basado en la teoría del color y accesibilidad bajo la norma WCAG
 
-SEMANA 2
+SEMANA 2 DIA 1
+
+Para la construcción del sitio, se tomó la decisión técnica de usar Grid para estructuras bidimensionales (filas y columnas) y Flexbox para alineaciones en un solo eje (filas o columnas).
+
+Portada (Index): Se usó Grid (grid-template-columns: 1fr 1fr) para dividir la pantalla exactamente a la mitad. Sin embargo, dentro de la columna de texto se usó Flexbox (display: flex; flex-direction: column; justify-content: center;) porque solo necesitábamos centrar el texto verticalmente en un eje.
+
+Galería "Nuestras rutas": Se usó Grid (repeat(3, 1fr)) porque el requisito exigía forzar exactamente 3 columnas en escritorio. Flexbox requeriría cálculos de ancho, mientras que Grid lo hace nativo.
+
+Reservas (Layout 2:1): Se usó Grid (grid-template-columns: 2fr 1fr) para definir la estructura espacial de la página, dando el doble de protagonismo al formulario sin usar porcentajes (usando la unidad fr).
+
+Fila del formulario (Cédula y Celular): Se usó Flexbox (display: flex; gap: 1rem;) porque alineamos elementos en un solo eje (horizontal). A los hijos se les dio flex: 1 para que ambos campos midieran exactamente lo mismo.
+
+Encabezado y Pie de página: Se usó Flexbox (justify-content: space-between) porque son elementos que fluyen en una sola línea (el logo a un lado, el menú al otro; y en el pie, los 3 bloques separados uniformemente).
+
+2. Sección "Nuestra flota" (Uso de CSS Grid y Flexbox)
+Se creó la sección con 7 modelos, donde cada uno es un <article> con imagen, título, descripción, precio y botón.
+
+Cuadrícula fluida: Se usó Grid con grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)). Esto permite que el diseño sea 100% responsivo sin necesidad de media queries (se adapta solo al espacio disponible).
+
+Alineación interna: Se usó Flexbox (flex-direction: column) dentro de cada tarjeta, aplicando margin-top: auto al botón "Reservar". Esto garantiza que, aunque las descripciones de las bicicletas tengan distinta longitud, todos los botones queden perfectamente alineados al fondo de la tarjeta.
+
+3. Diseño Responsivo: Enfoque Mobile-First
+Se reescribió el archivo styles.css aplicando la filosofía Mobile-First:
+
+Los estilos base (sin media queries) describen la versión para celular: 1 sola columna (grid-template-columns: 1fr), header apilado (nombre arriba, menú abajo), y footer en columna.
+
+Media Query 768px (Tablet): Se activa la fila en el header y footer. Las grillas pasan a 2 columnas. El layout de reservas pasa a 2:1.
+
+Media Query 1200px (Escritorio): La galería de rutas pasa a sus 3 columnas definitivas y la flota muestra 4 modelos por fila.
+
+4. Corrección de Problemas con DevTools (Responsive)
+Al probar el sitio en el modo dispositivo de DevTools a 360 px, 768 px y 1280 px, se encontraron y resolvieron los siguientes problemas:
+
+Problema (360px): Las tablas de tarifas se desbordaban, generando un scroll horizontal en toda la página web.
+
+Solución: Se aplicó display: block y overflow-x: auto a las tablas. Además, se redujo el padding y el font-size de las celdas (td, th) para móvil, permitiendo que la tabla se lea bien sin romper el ancho de la pantalla.
+
+Problema (360px): El botón flotante de WhatsApp y algunas imágenes se salían ligeramente del contenedor principal.
+
+Solución: Se aplicó overflow-x: hidden al body y se aseguró que todas las imágenes tuvieran max-width: 100%; height: auto;. A las imágenes de cabecera se les limitó el tamaño base para que no ocuparan toda la pantalla del celular.
+
+Problema (768px - Escritorio): El menú de navegación se veía desproporcionado (letras gigantes) al pasar a la vista de escritorio.
+
+Solución: El menú estaba heredando el tamaño de fuente del <header>. Se aisló la regla aplicando font-size: 1rem específicamente a los enlaces #menu a.
+
+Problema (General): La lista de "Qué llevar" en la página de tarifas se veía como una lista de texto normal, rompiendo la estética de tarjetas del sitio.
+
+Solución: Se le asignó la clase .servicios y se aplicaron estilos con bordes redondeados y sombra, unificando el diseño visual.
+
+
 
 
 
