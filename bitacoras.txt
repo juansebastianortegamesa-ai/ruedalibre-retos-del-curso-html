@@ -351,7 +351,8 @@ Solución: El menú estaba heredando el tamaño de fuente del <header>. Se aisl�
 
 Problema (General): La lista de "Qué llevar" en la página de tarifas se veía como una lista de texto normal, rompiendo la estética de tarjetas del sitio.
 
-Solución: Se le asignó la clase .servicios y se aplicaron estilos con bordes redondeados y sombra, unificando el diseño visual.
+Solución: Se le asignó la clase .servicios y se aplicaron estilos con bordes redondeados y sombra, unificando el diseño visual..
+
 
 
 

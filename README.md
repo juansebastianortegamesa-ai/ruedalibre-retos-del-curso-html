@@ -92,6 +92,6 @@ Estética y Adaptabilidad: Uso correcto de Grid y Flexbox, tarjetas alineadas, i
 
 Accesibilidad (WCAG): Foco claramente visible al navegar con la tecla Tab y contraste de colores adecuado.
 
-Despliegue: Proyecto versionado con Git y publicado en GitHub Pages, verificado en un dispositivo móvil real.
+Despliegue: Proyecto versionado con Git y publicado en GitHub Pages, verificado en un dispositivo móvil real..
 
 
