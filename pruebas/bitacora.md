@@ -82,3 +82,41 @@ Recrear la sección de "Nuestra flota" (catálogo de bicicletas) del archivo `in
 * **Usaria css  Propio si:** Es un proyecto pequeño/mediano, necesitas una **identidad de marca muy estricta** (colores exactos, tipografías específicas), o quieres demostrar dominio avanzado de CSS nativo, Grid y Flexbox.
 * **Usa Bootstrap si:** Necesitas un **prototipo rápido**, el proyecto va a crecer mucho y necesitas estandarización, o si el equipo de desarrollo es grande y todos deben hablar el "mismo idioma" de clases.
 .
+
+
+
+# Bitácora de Migración: Rueda Libre v1.5 a v2.0-beta
+
+## 1. Resumen del Proyecto
+El objetivo de esta migración fue refactorizar el sitio web de "Rueda Libre" para eliminar el CSS de distribución personalizado y adoptar el sistema de cuadrícula (Grid) y las utilidades de Bootstrap 5.3. Se priorizó la semántica, la responsividad (360px, 768px, 1280px), la limpieza del código (cero `!important`, cero estilos en línea) y la conservación de la identidad visual de la marca.
+
+## 2. Comparativa de Código (`styles.css`)
+*   **Versión v1.5 (Código Original):** 285 líneas de código.
+*   **Versión v2.0-beta (Actual):** 98 líneas de código.
+*   **Reducción:** **187 líneas menos (una reducción del 65.6%)**.
+
+*El CSS ahora solo contiene variables de color, tipografía, bordes, sombras y estados de foco. Toda la distribución (`display: flex`, `grid`, `margin: auto`) fue eliminada y delegada a Bootstrap.*
+
+## 3. Tiempo Invertido en la Migración
+*   **Análisis inicial y detección de conflictos (DevTools):** 30 minutos.
+*   **Refactorización de los 3 archivos HTML (aplicación de grid y utilidades):** 1 hora 30 minutos.
+*   **Limpieza profunda de `style.css` y ajuste de variables en `:root`:** 1 hora.
+*   **Pruebas responsivas cruzadas (360px, 768px, 1280px):** 30 minutos.
+*   **Tiempo total:** **3 horas 30 minutos.**
+
+## 4. Ventajas y Desventajas Observadas
+
+### Ventajas
+1.  **Mantenibilidad Extrema:** El CSS se redujo más de la mitad. Si se requiere mover un elemento, solo se modifican las clases en el HTML (`col-md-8`), sin tocar el CSS.
+2.  **Responsividad Nativa:** Las tablas y el formulario son proporcionales en todos los dispositivos. El uso de `table-responsive` solucionó de raíz los desbordamientos en móviles.
+3.  **Accesibilidad y Consistencia:** Los formularios ahora tienen estados de foco estandarizados y accesibles (`form-control`, `form-select`).
+4.  **Cascada Limpia:** Al cargar Bootstrap primero (CDN) y nuestro `style.css` después, las reglas de la marca se aplican sin necesidad de recurrir a `!important`.
+
+### Desventajas
+1.  **HTML más "Verboso":** Las etiquetas ahora contienen múltiples clases utilitarias (ej. `d-flex flex-column flex-md-row align-items-center gap-3`), lo que puede hacer que el archivo HTML se vea más denso a primera vista.
+2.  **Curva de Aprendizaje:** Requiere memorizar la nomenclatura de los breakpoints de Bootstrap (`md`, `lg`) y las utilidades de flexbox para no volver a caer en la tentación de escribir CSS de layout personalizado.
+3.  **Dependencia de CDN:** La página depende de una conexión a internet para cargar los estilos y scripts de Bootstrap.
+
+## 5. Conclusión
+La migración a **Bootstrap 5.3 (v2.0-beta)** ha sido un éxito total. Se logró el objetivo principal: **delegar toda la responsividad y distribución al framework, dejando el CSS propio exclusivamente para la identidad visual** (colores, tipografía, bordes y sombras). Las páginas de Inicio, Tarifas y Reservas se adaptan perfectamente a los tres anchos solicitados (360px, 768px y 1280px). El código es ahora escalable, semántico, libre de malas prácticas (sin `<span>` innecesarios, sin `style=""`, sin `!important`) y está listo para ser desplegado en GitHub Pages.
+
