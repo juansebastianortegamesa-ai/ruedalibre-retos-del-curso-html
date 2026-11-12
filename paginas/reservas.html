@@ -13,22 +13,35 @@
 </head>
 <body>
 
-  <header id="header" class="normal site-header container d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
-    <div class="text-center text-md-start">
-      <h1>Reservas</h1>
-      <img src="../img/reserva.png" alt="Reserva tu bicicleta" class="img-fluid mx-auto d-block w-50 mt-2">
+  <nav class="navbar navbar-expand-lg bg-white border-bottom py-3">
+    <div class="container">
+      <h1 class="navbar-brand fs-3 mb-0">Reservas</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tarifas.html">Tarifas y Rutas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="reservas.html">Reservas</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <nav id="menu" class="d-flex flex-column flex-md-row align-items-center gap-3 mt-3 mt-md-0" aria-label="Navegación principal">
-      <a href="reservas.html" class="activo">Reservas</a>
-      <a href="../index.html">Inicio</a>
-      <a href="tarifas.html">Tarifas y Rutas</a>
-    </nav>
-  </header>
+  </nav>
 
-  <main class="container py-4">
+  <div class="container text-center py-4">
+    <img src="../img/reserva.png" alt="Reserva tu bicicleta" class="img-fluid img-banner mx-auto d-block">
+  </div>
+
+  <main class="container pb-4">
     <div class="row g-4">
       
-     
       <div class="col-12 col-md-8">
         <section class="mb-4">
           <div class="table-responsive">
@@ -134,18 +147,17 @@
               </div>
             </fieldset>
 
-            <button type="submit" class="btn-reserva w-100 py-2">Reservar</button>
+            <button type="submit" class="btn btn-success btn-lg w-100">Reservar</button>
           </form>
         </section>
       </div>
 
-     
       <aside class="col-12 col-md-4">
         <div class="bg-white border rounded p-4 h-100 shadow-sm">
           <h2 class="mb-3">Contacto</h2>
           <p>Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos a través de nuestro correo electrónico:</p>
           <div class="d-grid mt-4">
-            <a href="mailto:hola@ruedalibre.example" class="btn-reserva py-2">hola@ruedalibre.example</a>
+            <a href="mailto:hola@ruedalibre@gmail.com" class="btn btn-outline-success">hola@ruedalibre@gmail.com</a>
           </div>
         </div>
       </aside>

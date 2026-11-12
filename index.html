@@ -14,18 +14,40 @@
 <body>
 
 
-  <header id="header" class="inicio_1 site-header container d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
-    <h1>RUEDA LIBRE</h1>
-    <nav id="menu" class="d-flex flex-column flex-md-row align-items-center gap-3 mt-3 mt-md-0" aria-label="Navegación principal">
-      <a href="index.html" class="activo">Inicio</a>
-      <a href="#encuentranos">Encuéntranos</a>
-      <a href="#productos">Nuestros productos</a>
-      <a href="paginas/tarifas.html">Tarifas</a>
-      <a href="paginas/reservas.html">Puedes reservar aquí</a>
-    </nav>
-  </header>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom py-3">
+    <div class="container">
+  
+      <h1 class="navbar-brand fs-3 mb-0">RUEDA LIBRE</h1>
+      
+   
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+   
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#encuentranos">Encuéntranos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#productos">Nuestros productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="paginas/tarifas.html">Tarifas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="paginas/reservas.html">Puedes reservar aquí</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <main class="container">
+  <main class="container mt-4">
     <section class="row align-items-center mb-5 seccion">
       <div class="col-12 col-md-6 text-center mb-4 mb-md-0">
         <img src="img/LogotipocircularRuedaLibre.png" alt="Logo circular de Rueda Libre" class="img-fluid mx-auto d-block w-75">
@@ -70,7 +92,8 @@
             <h3>Bicicleta Scoop</h3>
             <img src="img/bicicleta-scoop.png" alt="Bicicleta Scoop" class="img-fluid card-img-top p-3">
             <div class="card-body d-flex flex-column justify-content-end">
-              <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Comprar</a>
+             
+              <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Comprar</a>
             </div>
           </article>
         </div>
@@ -79,7 +102,7 @@
             <h3>Bicicletas BMX personalizadas</h3>
             <img src="img/bmx.png" alt="Bicicletas BMX" class="img-fluid card-img-top p-3">
             <div class="card-body d-flex flex-column justify-content-end">
-              <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Comprar</a>
+              <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Comprar</a>
             </div>
           </article>
         </div>
@@ -88,7 +111,7 @@
             <h3>Bicicletas de competición</h3>
             <img src="img/bicicletas-competicion.png" alt="Bicicletas de competición" class="img-fluid card-img-top p-3">
             <div class="card-body d-flex flex-column justify-content-end">
-              <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Comprar</a>
+              <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Comprar</a>
             </div>
           </article>
         </div>
@@ -98,7 +121,7 @@
             <h3>Bicicleta eléctrica</h3>
             <img src="img/bicicletaelectrica.png" alt="Bicicleta eléctrica" class="img-fluid card-img-top p-3">
             <div class="card-body d-flex flex-column justify-content-end">
-              <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Comprar</a>
+              <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Comprar</a>
             </div>
           </article>
         </div>
@@ -113,7 +136,7 @@
             <h3>Cascos para bicicleta</h3>
             <img src="img/cascos-bicicleta.png" alt="Cascos para bicicleta" class="img-fluid card-img-top p-3">
             <div class="card-body d-flex flex-column justify-content-end">
-              <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Comprar</a>
+              <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Comprar</a>
             </div>
           </article>
         </div>
@@ -122,7 +145,7 @@
             <h3>Accesorios para bicicleta</h3>
             <img src="img/accesorios-bicicleta.png" alt="Accesorios para bicicleta" class="img-fluid card-img-top p-3">
             <div class="card-body d-flex flex-column justify-content-end">
-              <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Comprar</a>
+              <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Comprar</a>
             </div>
           </article>
         </div>
@@ -131,7 +154,7 @@
             <h3>Productos de limpieza</h3>
             <img src="img/kit-limpieza-bicicleta.png" alt="Productos de limpieza para bicicleta" class="img-fluid card-img-top p-3">
             <div class="card-body d-flex flex-column justify-content-end">
-              <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Comprar</a>
+              <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Comprar</a>
             </div>
           </article>
         </div>
@@ -147,7 +170,7 @@
             <img src="img/rutarioyparques.png" alt="Ruta río y parques" class="img-fluid card-img-top p-3">
             <h3>Nivel Fácil</h3>
             <div class="card-body d-flex flex-column justify-content-end">
-              <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Reservar</a>
+              <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Reservar</a>
             </div>
           </article>
         </div>
@@ -157,7 +180,7 @@
             <img src="img/rutabarrios.png" alt="Rutas urbanas" class="img-fluid card-img-top p-3">
             <h3>Nivel Fácil</h3>
             <div class="card-body d-flex flex-column justify-content-end">
-              <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Reservar</a>
+              <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Reservar</a>
             </div>
           </article>
         </div>
@@ -167,7 +190,7 @@
             <img src="img/laspalmas.png" alt="Ruta Las Palmas" class="img-fluid card-img-top p-3">
             <h3>Nivel Difícil</h3>
             <div class="card-body d-flex flex-column justify-content-end">
-              <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Reservar</a>
+              <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Reservar</a>
             </div>
           </article>
         </div>
@@ -183,7 +206,7 @@
             <h3>Urbana Clásica</h3>
             <p>Cómoda y liviana para las ciclorrutas.</p>
             <p class="precio">$10.000 / hora</p>
-            <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Reservar</a>
+            <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Reservar</a>
           </article>
         </div>
         <div class="col">
@@ -192,7 +215,7 @@
             <h3>Urbana Plegable</h3>
             <p>Se dobla en segundos; ideal para combinar con el metro.</p>
             <p class="precio">$12.000 / hora</p>
-            <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Reservar</a>
+            <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Reservar</a>
           </article>
         </div>
         <div class="col">
@@ -201,7 +224,7 @@
             <h3>Montaña Trail</h3>
             <p>Suspensión delantera y 21 cambios para las subidas.</p>
             <p class="precio">$15.000 / hora</p>
-            <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Reservar</a>
+            <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Reservar</a>
           </article>
         </div>
         <div class="col">
@@ -210,7 +233,7 @@
             <h3>Gravel Aventura</h3>
             <p>Para rutas mixtas de asfalto y destapado.</p>
             <p class="precio">$18.000 / hora</p>
-            <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Reservar</a>
+            <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Reservar</a>
           </article>
         </div>
         <div class="col">
@@ -219,7 +242,7 @@
             <h3>Eléctrica Urbana</h3>
             <p>Asistencia eléctrica con 45 km de autonomía.</p>
             <p class="precio">$25.000 / hora</p>
-            <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Reservar</a>
+            <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Reservar</a>
           </article>
         </div>
         <div class="col">
@@ -228,7 +251,7 @@
             <h3>Infantil</h3>
             <p>Para niños de 6 a 10 años.</p>
             <p class="precio">$8.000 / hora</p>
-            <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Reservar</a>
+            <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Reservar</a>
           </article>
         </div>
         <div class="col">
@@ -237,7 +260,7 @@
             <h3>Tándem</h3>
             <p>Para dos personas; perfecta para pasear en pareja.</p>
             <p class="precio">$20.000 / hora</p>
-            <a href="paginas/reservas.html" class="btn-reserva w-100 mt-auto">Reservar</a>
+            <a href="paginas/reservas.html" class="btn btn-success w-100 mt-auto">Reservar</a>
           </article>
         </div>
       </div>
@@ -283,7 +306,8 @@
           <h3 class="fs-3 fw-bold mb-2">¿Listo para tu próxima aventura?</h3>
           <p class="text-white-50 mb-0">Reserva hoy mismo y descubre Medellín sobre ruedas.</p>
         </div>
-        <a href="paginas/reservas.html" class="d-inline-block text-warning fw-bold text-decoration-none fs-5 px-4 py-3 border border-warning rounded-pill">Reservar ahora</a>
+      
+        <a href="paginas/reservas.html" class="btn btn-outline-warning btn-lg px-4 rounded-pill">Reservar ahora</a>
         <img src="img/bicicleta.png" alt="Bicicleta decorativa" class="d-none d-md-block img-fluid w-25">
       </div>
     </section>
@@ -291,12 +315,13 @@
     <section id="encuentranos" class="seccion mb-5 text-center">
       <h2>Encuéntranos</h2>
       <img src="img/encuentranos.png" alt="Ubicación Rueda Libre" class="img-fluid mx-auto d-block mb-4 w-50">
-      <a href="https://maps.app.goo.gl/BHJzuPRC39nPDxpc8" target="_blank" rel="noopener noreferrer" class="btn-reserva">Nuestra ubicación</a>
+
+      <a href="https://maps.app.goo.gl/BHJzuPRC39nPDxpc8" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-lg">Nuestra ubicación</a>
     </section>
 
     <section class="seccion mb-5 text-center">
       <p>Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos a través de:</p>
-      <a href="mailto:hola@ruedalibre@gmail.com" class="btn-reserva">hola@ruedalibre@gmail.com</a>
+      <a href="mailto:hola@ruedalibre@gmail.com" class="btn btn-outline-success btn-lg">hola@ruedalibre@gmail.com</a>
     </section>
 
     <section class="seccion mb-5">
@@ -326,6 +351,7 @@
     </div>
     <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-BOTON" aria-label="Chatear por WhatsApp">WhatsApp</a>
   </footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

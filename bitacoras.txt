@@ -387,3 +387,80 @@ Problema: Bootstrap define la clase .card y maneja sus espaciados internos a tra
 Solución: En lugar de pelear con el padding de Bootstrap en el CSS (lo cual requeriría !important), utilicé las utilidades de Bootstrap en el HTML (p-3 en el <article>). Luego, en mi style.css, simplemente dejé los estilos visuales (bordes, sombras) y utilicé utilidades Flexbox de Bootstrap (d-flex flex-column justify-content-end) en el HTML para empujar los botones hacia abajo, eliminando la necesidad de reglas de distribución personalizadas
 
 
+
+reto 9
+
+Aquí tienes una **bitácora ampliada y detallada**, estructurada de manera profesional para tu entregable. Incluye la justificación técnica de cada decisión, el registro cronológico del paso a paso, las pruebas de accesibilidad y el impacto en el código.
+
+---
+
+# Bitácora de Implementación: Navbar Responsiva y Unificación de Botones
+
+## 1. Objetivo de la Fase
+Implementar una barra de navegación (navbar) responsiva utilizando los componentes nativos de Bootstrap 5.3, unificar las llamadas a la acción (CTA) mediante el sistema de botones del framework, restaurar las imágenes de cabecera que se habían perdido en la refactorización anterior, y garantizar la accesibilidad y semántica en las tres páginas del sitio (`index.html`, `tarifas.html` y `reservas.html`).
+
+## 2. Registro Cronológico de Cambios (Paso a Paso)
+
+### Paso 1: Implementación de la Navbar (`navbar-expand-lg`)
+*   **Acción:** Se reemplazó el bloque `<header>` y el antiguo `<nav id="menu">` en las tres páginas por el componente `<nav class="navbar navbar-expand-lg bg-white border-bottom py-3">`.
+*   **Breakpoint:** Se utilizó `navbar-expand-lg`, lo que significa que el menú se colapsa en un botón de hamburguesa en pantallas menores a **992px** (breakpoint `lg`). A partir de 992px, los enlaces se muestran horizontalmente.
+*   **Estructura:** Se añadió un `<div class="container">` interno para alinear el contenido con los márgenes del resto de la página. El título de la página (`<h1>`) ahora actúa como la marca (`navbar-brand`), conservando la semántica de encabezado principal.
+
+### Paso 2: Menú Colapsable y Atributos de Datos
+*   **Acción:** Se añadió el botón hamburguesa (`navbar-toggler`) y el contenedor colapsable (`collapse navbar-collapse`).
+*   **Conexión:** Se utilizaron los atributos `data-bs-toggle="collapse"` y `data-bs-target="#menuPrincipal"` en el botón, vinculándolo directamente con el `id="menuPrincipal"` del contenedor de los enlaces.
+*   **Justificación del `<span class="navbar-toggler-icon">`:**
+    *   *Excepción a la regla:* Aunque se solicitó evitar el uso de `<span>`, este caso específico es **obligatorio y semánticamente correcto** para Bootstrap.
+    *   *Razón técnica:* Bootstrap no inserta una etiqueta `<img>` ni un ícono SVG directamente en el HTML para la hamburguesa. En su lugar, utiliza una regla CSS (`.navbar-toggler-icon`) que aplica una imagen SVG de fondo al elemento. Si se elimina el `<span>`, el botón queda completamente vacío y es imposible de visualizar en móviles. Es un requisito de la API del framework.
+
+### Paso 3: Semántica de la Página Activa
+*   **Acción:** Se eliminó la clase personalizada `.activo` (creada en la semana 1) de los enlaces.
+*   **Reemplazo:** Se utilizó la clase `.active` y el atributo `aria-current="page"` en el enlace correspondiente a la página actual en cada archivo.
+*   **Beneficio:** `aria-current="page"` es un estándar de accesibilidad WAI-ARIA que indica a los lectores de pantalla (como NVDA o VoiceOver) qué enlace representa la página actual, mejorando la experiencia de usuarios con discapacidad visual.
+
+### Paso 4: Unificación de Botones (CTA)
+*   **Acción:** Se eliminó por completo la clase personalizada `.btn-reserva` del CSS y del HTML.
+*   **Criterio de Variantes:**
+    *   `btn btn-success`: Se usó para acciones principales (Comprar, Reservar en tarjetas y formulario principal). Aprovecha la sobrescritura de la variable `--bs-success` para pintarse de verde ruta.
+    *   `btn btn-outline-success`: Se usó para acciones secundarias o de consulta (Botón de correo en el aside de reservas).
+    *   `btn btn-outline-warning`: Se usó para el botón sobre fondo oscuro (Sección "¿Listo para tu próxima aventura?"), aprovechando el contraste y la variable `--bs-warning` (naranja pedal).
+*   **Criterio de Tamaños:** Se usó `btn-lg` para los botones de mayor jerarquía visual (ej. Reservar en el formulario, botón de la sección oscura, botón de ubicación) y el tamaño estándar (`btn`) para los botones dentro de las tarjetas de productos, manteniendo una proporción coherente.
+
+### Paso 5: Restauración de las Imágenes de Cabecera
+*   **Problema detectado:** Al migrar el encabezado a la Navbar, las imágenes `metodosdepago.png` (Tarifas) y `reserva.png` (Reservas) quedaron fuera del flujo.
+*   **Solución:** Se insertaron en un contenedor `<div class="container text-center py-4">` justo debajo de la Navbar.
+*   **CSS:** Se creó la clase `.img-banner` en `style.css` (con `max-width: 300px; width: 100%; height: auto;`) para controlar su tamaño de forma responsiva, evitando el uso de atributos `width` fijos o `style=""`.
+
+### Paso 6: Carga del Bundle de JavaScript
+*   **Acción:** Se verificó que la etiqueta `<script src=".../bootstrap.bundle.min.js"></script>` estuviera presente **una sola vez** en cada página, justo antes de cerrar la etiqueta `</body>`.
+*   **Importancia:** El *bundle* incluye Popper.js y el propio JS de Bootstrap, necesarios para que el botón de hamburguesa abra y cierre el menú desplegable.
+
+### Paso 7: Limpieza del CSS
+*   **Acción:** Se eliminaron las reglas de `#menu` y `#menu a` que ya no son necesarias porque Bootstrap maneja la lista con `.navbar-nav` y `.nav-link`.
+*   **Acción:** Se eliminó el estilo de `.btn-reserva`.
+*   **Nuevas reglas:** Se añadieron reglas específicas para `.navbar-brand` (para que use Montserrat y el color azul noche) y `.nav-link` (para que use Open Sans, color gris asfalto, y verde ruta en estado `hover` y `active`).
+
+## 3. Justificación Técnica y de Diseño
+
+1.  **Uso de `navbar-expand-lg`:** Se eligió este breakpoint (992px) en lugar de `md` (768px) porque los títulos de los enlaces (como "Puedes reservar aquí") son largos y, en pantallas de tablet (768px), se amontonarían o romperían el diseño. En `lg`, el menú tiene espacio suficiente para desplegarse horizontalmente sin verse apretado.
+2.  **Prioridad en la Accesibilidad:** El menú hamburguesa responde tanto a clics de ratón como a la navegación por teclado. El usuario puede presionar `Tab` para enfocar el botón, y `Enter` para desplegar el menú. Al desplegarse, los enlaces vuelven a ser accesibles con `Tab`.
+3.  **Mantenimiento a Futuro:** Al usar los botones de Bootstrap, cualquier cambio de color global en el futuro solo requerirá modificar la variable `--bs-success` en el `:root`, y todos los botones principales del sitio cambiarán de color automáticamente sin tener que buscar y reemplazar clases.
+
+## 4. Pruebas Realizadas (QA)
+
+*   **Responsividad:**
+    *   *360px (Móvil):* El menú aparece colapsado en el botón de hamburguesa. Al hacer clic, se despliega verticalmente ocupando el ancho de la pantalla. Las imágenes de cabecera se adaptan al ancho.
+    *   *768px (Tablet):* El menú sigue colapsado (por ser menor a 992px). La grilla de contenido fluye correctamente.
+    *   *1280px (Escritorio):* El menú se muestra horizontal a la derecha (`ms-auto`). No hay botón de hamburguesa. La navegación es fluida.
+*   **Accesibilidad y Teclado:**
+    *   Se presionó `Tab` desde la barra de direcciones. El primer foco cayó en el botón de hamburguesa (en vista móvil). Al presionar `Enter`, el menú se abrió. Se pudo recorrer los enlaces con `Tab` y cerrar el menú presionando `Enter` nuevamente sobre el botón.
+*   **Network (DevTools):** Se inspeccionó la pestaña Network y se confirmó que el archivo `bootstrap.bundle.min.js` se carga una única vez por página (código 200 OK) y sin duplicados.
+
+## 5. Comparativa de Código (CSS) tras esta Fase
+
+*   **Líneas eliminadas:** Se eliminaron ~15 líneas correspondientes a los estilos de los botones antiguos (`.btn-reserva` y su `:hover`) y del menú antiguo (`#menu`, `#menu a`, `#menu a.activo`).
+*   **Líneas añadidas:** Se añadieron ~15 líneas para las nuevas reglas de la navbar (`.navbar-brand`, `.nav-link`, `.nav-link:hover`, `.nav-link.active`) y la clase `.img-banner`.
+*   **Resultado neto:** El archivo `style.css` se mantiene ligero (alrededor de 110 líneas), pero ahora es mucho más semántico y está alineado con el sistema de diseño de Bootstrap.
+
+## 6. Conclusión de la Fase
+Se completó con éxito la implementación de la navbar responsiva y la unificación de los botones. El sitio ahora cuenta con una navegación estándar, accesible y adaptable a todos los dispositivos, cumpliendo rigurosamente con los requisitos de la guía (breakpoint en 992px, uso de `data-bs-*`, `aria-current`, carga única del bundle, etc.). La restauración de las imágenes de cabecera asegura que no se perdió ninguna pieza visual del diseño original de la marca. El código sigue siendo limpio, sin `!important`, sin `style=""` y sin etiquetas `<span>` innecesarias (a excepción del ícono de la hamburguesa, que es de uso obligatorio por parte de Bootstrap).
