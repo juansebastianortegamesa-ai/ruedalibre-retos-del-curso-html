@@ -81,3 +81,4 @@ Recrear la sección de "Nuestra flota" (catálogo de bicicletas) del archivo `in
 
 * **Usaria css  Propio si:** Es un proyecto pequeño/mediano, necesitas una **identidad de marca muy estricta** (colores exactos, tipografías específicas), o quieres demostrar dominio avanzado de CSS nativo, Grid y Flexbox.
 * **Usa Bootstrap si:** Necesitas un **prototipo rápido**, el proyecto va a crecer mucho y necesitas estandarización, o si el equipo de desarrollo es grande y todos deben hablar el "mismo idioma" de clases.
+.
