@@ -15,6 +15,7 @@
     --font-titulos: 'Montserrat', Arial, sans-serif;
     --font-textos: 'Open Sans', Arial, sans-serif;
 
+    /* Variables mapeadas para Bootstrap */
     --bs-success: var(--color-verde-ruta);
     --bs-warning: var(--color-naranja-pedal);
     --bs-dark: var(--color-azul-noche);
@@ -29,7 +30,7 @@ body {
     overflow-x: hidden; 
 }
 
-/*   JERARQUÍA DE TEXTOS*/
+/* JERARQUÍA DE TEXTOS */
 .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: var(--font-titulos);
     color: var(--color-azul-noche);
@@ -46,7 +47,7 @@ body p, .lead {
     color: var(--color-azul-noche);
 }
 
-/* NAVBAR Y BANNERS */
+/* NAVBAR Y BANNERS (MANTENIENDO EL HOVER ORIGINAL VERDE) */
 .navbar-brand {
     font-family: var(--font-titulos);
     color: var(--color-azul-noche);
@@ -67,22 +68,109 @@ body p, .lead {
     font-weight: 600;
 }
 
-/* Clase para las imágenes de cabecera (Tarifas y Reservas) */
 .img-banner {
     max-width: 300px;
     width: 100%;
     height: auto;
 }
 
-/*
-   COMPONENTES
- */
-footer {
-    border-top: 1px solid var(--color-gris-asfalto);
+/* CARRUSEL DE PROMOCIONES */
+.carousel-img {
+    width: 100%;
+    height: 450px;
+    object-fit: contain; 
+    background-color: #ffffff; 
 }
-.footer-bloque h3 { color: var(--color-verde-ruta); margin-bottom: 0.5rem; }
-.footer-bloque p { font-size: 1rem; margin-bottom: 0.25rem; }
 
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 250px;
+    }
+}
+
+/* TARJETAS: Altura uniforme para imágenes */
+.card-img-uniform {
+    height: 200px;
+    object-fit: contain;
+    background-color: #ffffff;
+    padding: 1rem;
+}
+
+/* BOTONES PERSONALIZADOS (HOVER Y FOCUS EN NARANJA) */
+.btn-success {
+    background-color: var(--color-verde-ruta);
+    border-color: var(--color-verde-ruta);
+    color: #ffffff;
+    font-family: var(--font-titulos);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover, .btn-success:focus {
+    background-color: var(--color-naranja-pedal);
+    border-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche); 
+    box-shadow: 0 0 0 0.25rem rgba(243, 154, 43, 0.5);
+}
+
+.btn-outline-success {
+    color: var(--color-verde-ruta);
+    border-color: var(--color-verde-ruta);
+    font-family: var(--font-titulos);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-success:hover, .btn-outline-success:focus {
+    background-color: var(--color-naranja-pedal);
+    border-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+}
+
+.btn-outline-warning {
+    color: var(--color-naranja-pedal);
+    border-color: var(--color-naranja-pedal);
+    font-family: var(--font-titulos);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-warning:hover, .btn-outline-warning:focus {
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+    border-color: var(--color-naranja-pedal);
+}
+
+/* FORMULARIOS */
+fieldset { border: 1px solid var(--color-gris-asfalto); }
+legend { font-family: var(--font-titulos); color: var(--color-azul-noche); }
+.form-label { font-weight: 600; color: var(--color-azul-noche); }
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--color-naranja-pedal);
+    box-shadow: 0 0 0 0.25rem rgba(243, 154, 43, 0.25);
+    outline: none;
+}
+
+/* SERVICIOS */
+.servicios { list-style-position: inside; padding: 0; }
+.servicios li {
+    background-color: #ffffff;
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.servicios li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    border-color: var(--color-verde-ruta);
+}
+
+/* TABLAS */
 #tabla-bicis, #tabla-rutas, .tabla-horarios {
     border-collapse: collapse;
     font-size: 0.85rem;
@@ -97,40 +185,12 @@ th, td {
 th { background-color: var(--color-verde-ruta); color: #ffffff; font-weight: bold; }
 tr:nth-child(even) { background-color: var(--color-crema); }
 
-fieldset { border: 1px solid var(--color-gris-asfalto); }
-legend { font-family: var(--font-titulos); color: var(--color-azul-noche); }
-.form-label { font-weight: 600; color: var(--color-azul-noche); }
-
-.form-control:focus, .form-select:focus {
-    border-color: var(--color-naranja-pedal);
-    box-shadow: 0 0 0 0.25rem rgba(243, 154, 43, 0.25);
+/* FOOTER Y WHATSAPP */
+footer {
+    border-top: 1px solid var(--color-gris-asfalto);
 }
-
-.card, .card-flota {
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    background-color: #ffffff;
-}
-.nuevo {
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 0.85rem;
-}
-.card img, .card-flota img { width: 100%; height: 200px; object-fit: contain; }
-
-.servicios { list-style-position: inside; padding: 0; }
-.servicios li {
-    background-color: #ffffff;
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 0.75rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
+.footer-bloque h3 { color: var(--color-verde-ruta); margin-bottom: 0.5rem; }
+.footer-bloque p { font-size: 1rem; margin-bottom: 0.25rem; }
 
 .whatsapp-BOTON {
     position: fixed;
@@ -144,6 +204,12 @@ legend { font-family: var(--font-titulos); color: var(--color-azul-noche); }
     font-weight: 600;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    transition: transform 0.2s ease;
+}
+
+.whatsapp-BOTON:hover {
+    transform: scale(1.05);
+    color: #ffffff;
 }
 
 @media (min-width: 768px) {
