@@ -18,6 +18,15 @@
     --espaciado-s: 0.5rem;
     --espaciado-m: 1rem;
     --espaciado-l: 1.5rem;
+    
+
+    /*esto es para se usen los colores del root pero pal boostrap*/
+
+    --bs-success: var(--color-verde-ruta);
+    --bs-warning: var(--color-naranja-pedal);
+    --bs-dark: var(--color-azul-noche);
+    --bs-secondary: var(var(--color-gris-asfalto));
+    --bs-light: var(var(--color-crema))
 }
 
 /* Cuerpo  del Mobile First */

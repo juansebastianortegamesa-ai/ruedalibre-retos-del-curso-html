@@ -355,6 +355,15 @@ Solución: Se le asignó la clase .servicios y se aplicaron estilos con bordes r
 
 
 
+SEMANA 2 DIA 2  reto 6
+# Bitácora de clases Bootstrap 5.3
+
+1. **`row-cols-lg-4`** ([Grid](https://getbootstrap.com/docs/5.3/layout/grid/#row-columns)): Define que la grilla muestre 4 columnas iguales a partir del breakpoint `lg`.
+2. **`d-flex`** ([Flex](https://getbootstrap.com/docs/5.3/utilities/flex/#display)): Habilita el contexto Flexbox en la franja final para manejar alineación y distribución.
+3. **`flex-md-row`** ([Flex direction](https://getbootstrap.com/docs/5.3/utilities/flex/#direction)): Cambia la orientación de los ítems flex a horizontal a partir de `md` (en móvil se quedan en columna con `flex-column`).
+4. **`justify-content-md-between`** ([Flex justify](https://getbootstrap.com/docs/5.3/utilities/flex/#justify-content)): Distribuye los elementos hacia los extremos del contenedor desde `md`.
+5. **`d-none`** ([Display](https://getbootstrap.com/docs/5.3/utilities/display/)): Oculta la imagen decorativa en móviles, revirtiendo su efecto con `d-md-block` en pantallas más grandes.
+
 
 
 
