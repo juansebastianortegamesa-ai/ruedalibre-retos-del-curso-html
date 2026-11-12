@@ -15,6 +15,10 @@
     --font-titulos: 'Montserrat', Arial, sans-serif;
     --font-textos: 'Open Sans', Arial, sans-serif;
 
+    --espaciado-s: 0.5rem;
+    --espaciado-m: 1rem;
+    --espaciado-l: 1.5rem;
+
     /* Sobrescritura de variables de Bootstrap para mantener la identidad de marca */
     --bs-success: var(--color-verde-ruta);
     --bs-warning: var(--color-naranja-pedal);
@@ -31,10 +35,26 @@ body {
     overflow-x: hidden; 
 }
 
-/* Jerarquía de textos */
-body h2 { font-size: 1.50rem; font-family: var(--font-titulos); font-weight: 700; }
-body h3 { font-size: 1.10rem; font-family: var(--font-titulos); font-weight: 600; }
-body p  { font-family: var(--font-textos); font-size: 1.1rem; }
+/* =================================================================
+   JERARQUÍA DE TEXTOS (Aseguramos fuentes y colores en todos los niveles)
+   ================================================================= */
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--font-titulos);
+    color: var(--color-azul-noche);
+}
+
+h1, .h1 { font-weight: 700; }
+h2, .h2 { font-size: 1.50rem; font-weight: 700; margin-bottom: 1rem; }
+h3, .h3 { font-size: 1.10rem; font-weight: 600; margin-bottom: 0.5rem; }
+
+body p, .lead {
+    font-family: var(--font-textos);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--color-azul-noche);
+}
+/* ================================================================= */
 
 /* Menú (Solo estilos de enlaces) */
 #menu a {
@@ -51,7 +71,7 @@ body p  { font-family: var(--font-textos); font-size: 1.1rem; }
 footer {
     border-top: 1px solid var(--color-gris-asfalto);
 }
-.footer-bloque h3 { color: var(--color-verde-ruta); margin-bottom: 0.5rem; }
+.footer-bloque h3 { color: var(--color-verde-ruta); margin-bottom: var(--espaciado-s); }
 .footer-bloque p { font-size: 1rem; margin-bottom: 0.25rem; }
 
 /* Tablas (Solo colores y bordes) */
@@ -86,11 +106,16 @@ tr:nth-child(even) { background-color: var(--color-crema); }
 .btn-reserva:hover { background-color: var(--color-naranja-pedal); color: var(--color-crema); }
 
 /* Formularios (Identidad visual) */
-fieldset { border: 1px solid var(--color-gris-asfalto); }
-legend { font-family: var(--font-titulos); color: var(--color-azul-noche); }
+fieldset { 
+    border: 1px solid var(--color-gris-asfalto); 
+}
+legend { 
+    font-family: var(--font-titulos);
+    color: var(--color-azul-noche);
+}
 .form-label { font-weight: 600; color: var(--color-azul-noche); }
 
-/* Estados de foco personalizados */
+/* Estados de foco personalizados para inputs */
 .form-control:focus, .form-select:focus {
     border-color: var(--color-naranja-pedal);
     box-shadow: 0 0 0 0.25rem rgba(243, 154, 43, 0.25);
@@ -103,6 +128,7 @@ legend { font-family: var(--font-titulos); color: var(--color-azul-noche); }
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     background-color: #ffffff;
 }
+
 .nuevo {
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
@@ -111,9 +137,17 @@ legend { font-family: var(--font-titulos); color: var(--color-azul-noche); }
     font-weight: bold;
     font-size: 0.85rem;
 }
-.card img, .card-flota img { width: 100%; height: 200px; object-fit: contain; }
 
-.servicios { list-style-position: inside; padding: 0; }
+.card img, .card-flota img { 
+    width: 100%; 
+    height: 200px; 
+    object-fit: contain; 
+}
+
+.servicios {
+    list-style-position: inside;
+    padding: 0;
+}
 .servicios li {
     background-color: #ffffff;
     border: 1px solid var(--color-gris-asfalto);
@@ -136,4 +170,10 @@ legend { font-family: var(--font-titulos); color: var(--color-azul-noche); }
     font-weight: 600;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
     z-index: 1000;
+}
+
+/* Ajustes de tabla para Desktop */
+@media (min-width: 768px) {
+    #tabla-bicis, #tabla-rutas, .tabla-horarios { font-size: 1rem; }
+    th, td { padding: 0.75rem 1rem; }
 }
