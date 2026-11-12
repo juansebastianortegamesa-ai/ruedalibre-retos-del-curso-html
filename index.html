@@ -45,31 +45,43 @@
   </nav>
 
   <main class="container mt-4">
-
     <section class="mb-5">
-      <div id="promocionesCarrusel" class="carousel slide" data-bs-ride="carousel">
+      <div id="promocionesCarrusel" class="carousel slide carousel-dark" data-bs-ride="carousel" data-bs-interval="1000">
+        
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#promocionesCarrusel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Promoción 1"></button>
           <button type="button" data-bs-target="#promocionesCarrusel" data-bs-slide-to="1" aria-label="Promoción 2"></button>
           <button type="button" data-bs-target="#promocionesCarrusel" data-bs-slide-to="2" aria-label="Promoción 3"></button>
         </div>
-        <div class="carousel-inner rounded-3">
+        
+        <div class="carousel-inner rounded-4 shadow-sm bg-white border">
+          
           <div class="carousel-item active position-relative">
-            <img src="img/bicicletaurbanaclasica.png" class="d-block w-100 carousel-img" alt="Martes 2x1 en bicicletas urbanas">
+            <div class="d-flex justify-content-center align-items-center p-5">
+              <img src="img/biciletaurbana2.png" class="img-fluid" alt="Martes 2x1 en bicicletas urbanas">
+            </div>
             <div class="badge bg-success text-white position-absolute top-0 start-0 m-3 z-1">Promoción</div>
             <div class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 z-1">Nuevo</div>
           </div>
+          
           <div class="carousel-item position-relative">
-            <img src="img/bicicletaelectrica.png" class="d-block w-100 carousel-img" alt="20 por ciento de descuento en eléctricas de lunes a jueves">
+            <div class="d-flex justify-content-center align-items-center p-5">
+              <img src="img/electricaurbana.png" class="img-fluid" alt="20 por ciento de descuento en eléctricas de lunes a jueves">
+            </div>
             <div class="badge bg-success text-white position-absolute top-0 start-0 m-3 z-1">Promoción</div>
             <div class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 z-1">Nuevo</div>
           </div>
+          
           <div class="carousel-item position-relative">
-            <img src="img/tadem.png" class="d-block w-100 carousel-img" alt="Si cumples años, el recorrido guiado es gratis">
+            <div class="d-flex justify-content-center align-items-center p-5">
+              <img src="img/bicicletas-competicion.png" class="img-fluid" alt="Si cumples años, el recorrido guiado es gratis">
+            </div>
             <div class="badge bg-success text-white position-absolute top-0 start-0 m-3 z-1">Promoción</div>
             <div class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 z-1">Nuevo</div>
           </div>
+          
         </div>
+        
         <button class="carousel-control-prev" type="button" data-bs-target="#promocionesCarrusel" data-bs-slide="prev">
           <div class="carousel-control-prev-icon" aria-hidden="true"></div>
           <div class="visually-hidden">Anterior</div>
