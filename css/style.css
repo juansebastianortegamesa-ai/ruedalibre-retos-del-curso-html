@@ -18,53 +18,30 @@
     --espaciado-s: 0.5rem;
     --espaciado-m: 1rem;
     --espaciado-l: 1.5rem;
-    
 
-    /*esto es para se usen los colores del root pero pal boostrap*/
-
+    /* Sobrescritura de variables de Bootstrap para mantener la identidad de marca */
     --bs-success: var(--color-verde-ruta);
     --bs-warning: var(--color-naranja-pedal);
     --bs-dark: var(--color-azul-noche);
-    --bs-secondary: var(var(--color-gris-asfalto));
-    --bs-light: var(var(--color-crema))
+    --bs-secondary: var(--color-gris-asfalto);
+    --bs-light: var(--color-crema);
 }
 
-/* Cuerpo  del Mobile First */
+/* Cuerpo del Mobile First */
 body {
     background-color: var(--color-crema);
     color: var(--color-azul-noche);
     font-family: var(--font-textos);
-    max-width: 75rem;
-    margin: 0 auto;
-    padding: 0 1rem;
     overflow-x: hidden; 
 }
-body h2 { font-size: 1.50rem; font-family: var(--font-titulos); margin-bottom: 1rem; }
-body h3 { font-size: 1.10rem; font-family: var(--font-titulos); margin-bottom: 0.5rem; }
+
+/* Jerarquía de textos (Sobrescribe los valores por defecto de Bootstrap) */
+body h2 { font-size: 1.50rem; font-family: var(--font-titulos); margin-bottom: 1rem; font-weight: 700; }
+body h3 { font-size: 1.10rem; font-family: var(--font-titulos); margin-bottom: 0.5rem; font-weight: 600; }
 body p  { font-family: var(--font-textos); font-size: 1.1rem; margin-bottom: 1rem; }
 
-main {
-    max-width: 100rem;
-    margin: 0 auto;
-    padding: var(--espaciado-m) 0;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-.img-centrada {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 80%; 
-}
-
-/* Header en móvil */
-.site-header,
-header {
+/* Header */
+.site-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,7 +52,6 @@ header {
     text-align: center;
 }
 
-header.normal { min-height: auto; }
 header.inicio_1 { min-height: auto; padding: var(--espaciado-l) 0; }
 
 #menu {
@@ -98,21 +74,15 @@ header.inicio_1 { min-height: auto; padding: var(--espaciado-l) 0; }
 #menu a.activo { color: var(--color-verde-ruta); font-weight: 600; }
 #menu a:hover  { text-decoration: underline; color: var(--color-verde-ruta); }
 
-
+/* Footer */
 footer {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espaciado-l);
-    padding: var(--espaciado-l) 0;
-    margin-top: var(--espaciado-l);
     border-top: 1px solid var(--color-gris-asfalto);
-    text-align: center;
 }
 
 .footer-bloque h3 { color: var(--color-verde-ruta); margin-bottom: var(--espaciado-s); }
 .footer-bloque p { font-size: 1rem; margin-bottom: 0.25rem; }
 
-
+/* Tablas */
 #tabla-bicis, #tabla-rutas, .tabla-horarios {
     width: 100%;
     max-width: 80rem;
@@ -134,7 +104,7 @@ th, td {
 th { background-color: var(--color-verde-ruta); color: #ffffff; font-weight: bold; }
 tr:nth-child(even) { background-color: var(--color-crema); }
 
-/* --- BOTONES Y FORMULARIOS --- */
+/* Botones */
 .btn-reserva {
     background-color: var(--color-verde-ruta);
     color: var(--color-crema);
@@ -150,6 +120,7 @@ tr:nth-child(even) { background-color: var(--color-crema); }
 }
 .btn-reserva:hover { background-color: var(--color-naranja-pedal); color: var(--color-crema); }
 
+/* Formularios */
 input:focus, textarea:focus, select:focus {
     outline: none;
     border: 2px solid var(--color-naranja-pedal);
@@ -168,19 +139,12 @@ select, input, textarea {
 }
 input[type="checkbox"] { display: inline-block; width: auto; margin-right: 0.5rem; }
 
-/* GRIDS PARA LAS TARGETAS  */
-.productos-grid, .rutas-grid, .flota-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--espaciado-l);
-}
-
+/* Tarjetas (El layout lo da Bootstrap, aquí solo estilos visuales) */
 .card, .card-flota {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: var(--espaciado-m);
     border: 1px solid var(--color-gris-asfalto);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
@@ -189,9 +153,6 @@ input[type="checkbox"] { display: inline-block; width: auto; margin-right: 0.5re
 }
 
 .nuevo {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
     padding: 0.25rem 0.75rem;
@@ -201,10 +162,14 @@ input[type="checkbox"] { display: inline-block; width: auto; margin-right: 0.5re
     z-index: 10;
 }
 
-.card img, .card-flota img { width: 100%; height: 200px; object-fit: contain; margin-bottom: var(--espaciado-s); }
-.card .btn-reserva, .card-flota .btn-reserva { margin-top: auto; width: 100%; }
+.card img, .card-flota img { 
+    width: 100%; 
+    height: 200px; 
+    object-fit: contain; 
+    margin-bottom: var(--espaciado-s); 
+}
 
-/* Listas con estilo de tarjeta */
+/* Listas de servicios */
 .servicios {
     list-style-position: inside;
     margin-bottom: var(--espaciado-l);
@@ -222,19 +187,6 @@ input[type="checkbox"] { display: inline-block; width: auto; margin-right: 0.5re
     font-size: 1rem;
 }
 
-/* Layout de Reservas y Portada */
-.hero-grid, .reservas-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--espaciado-l);
-}
-
-.fila-campos {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
 /* WhatsApp */
 .whatsapp-BOTON {
     position: fixed;
@@ -250,11 +202,27 @@ input[type="checkbox"] { display: inline-block; width: auto; margin-right: 0.5re
     z-index: 1000;
 }
 
-/* MEDIA QUERIES (Tablet: 768px) */
+/*  REGLAS DE DISTRIBUCIÓN QUE SE MANTIENEN   (Usadas exclusivamente en las páginas de Tarifas y Reservas)*/
+.reservas-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-l);
+}
+.fila-campos {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
 @media (min-width: 768px) {
-    .img-centrada { max-width: 300px; }
+    .reservas-layout { grid-template-columns: 2fr 1fr; align-items: start; }
+    .fila-campos { flex-direction: row; gap: var(--espaciado-m); }
+    .fila-campos p { flex: 1; }
+}
+/* ================================================================= */
 
-    .site-header, header {
+/* MEDIA QUERIES (Ajustes estructurales del header) */
+@media (min-width: 768px) {
+    .site-header {
         flex-direction: row;
         justify-content: space-between;
         text-align: left;
@@ -265,32 +233,12 @@ input[type="checkbox"] { display: inline-block; width: auto; margin-right: 0.5re
         gap: var(--espaciado-l); 
     }
 
-    footer {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .productos-grid, .rutas-grid { grid-template-columns: repeat(2, 1fr); }
-    .flota-grid { grid-template-columns: repeat(2, 1fr); }
-
-    .hero-grid { grid-template-columns: 1fr 1fr; align-items: center; }
-    .reservas-layout { grid-template-columns: 2fr 1fr; align-items: start; }
-    
-    .fila-campos { flex-direction: row; gap: var(--espaciado-m); }
-    .fila-campos p { flex: 1; }
-
     #tabla-bicis, #tabla-rutas, .tabla-horarios { font-size: 1rem; display: table; }
     th, td { padding: 1rem; white-space: normal; }
     
     .servicios li { font-size: 1.1rem; padding: 1.25rem; }
 }
 
-/* MEDIA QUERIES (Escritorio: 1200px)*/
 @media (min-width: 1200px) {
-    .rutas-grid { grid-template-columns: repeat(3, 1fr); } 
-    .flota-grid { grid-template-columns: repeat(4, 1fr); } 
     header.inicio_1 { min-height: 50vh; display: flex; align-items: center; }
 }
-

@@ -365,7 +365,25 @@ SEMANA 2 DIA 2  reto 6
 5. **`d-none`** ([Display](https://getbootstrap.com/docs/5.3/utilities/display/)): Oculta la imagen decorativa en móviles, revirtiendo su efecto con `d-md-block` en pantallas más grandes.
 
 
+reto 7 
+3. Bitácora de Conflictos (Para DevTools)
 
+Conflicto en los márgenes de los encabezados (<h2>, <h3>):
 
+Problema: Al inspeccionar, la regla margin-bottom: 1rem de body h2 aparecía tachada. Bootstrap aplica sus propios márgenes a los títulos (.h2, h2 con margin-bottom: 0.5rem).
+
+Solución: Al cargar style.css después de Bootstrap, la cascada hace que mi regla gane. Para evitar que Bootstrap aplique márgenes extraños, sobrescribí el valor directamente en style.css usando selectores de etiqueta con contexto (body h2), que tienen mayor peso que el selector simple de Bootstrap, sin necesidad de usar !important.
+
+Conflicto en el color de los enlaces del menú:
+
+Problema: Bootstrap aplica un color azul (--bs-link-color) por defecto a las etiquetas <a>. En DevTools, el color gris de mi menú se veía sobrescrito.
+
+Solución: En style.css, apunté específicamente a #menu a. El uso del ID (#menu) le da una especificidad mucho mayor a mi regla de color en comparación con el selector de etiqueta genérico de Bootstrap (a), resolviendo el conflicto de color inmediatamente.
+
+Conflicto en el padding de las tarjetas (.card):
+
+Problema: Bootstrap define la clase .card y maneja sus espaciados internos a través de .card-body. Mis estilos originales aplicaban padding directamente a .card. En DevTools, esto creaba cajas dobles o desalineación.
+
+Solución: En lugar de pelear con el padding de Bootstrap en el CSS (lo cual requeriría !important), utilicé las utilidades de Bootstrap en el HTML (p-3 en el <article>). Luego, en mi style.css, simplemente dejé los estilos visuales (bordes, sombras) y utilicé utilidades Flexbox de Bootstrap (d-flex flex-column justify-content-end) en el HTML para empujar los botones hacia abajo, eliminando la necesidad de reglas de distribución personalizadas
 
 
