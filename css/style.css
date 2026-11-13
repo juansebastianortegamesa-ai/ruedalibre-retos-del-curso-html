@@ -1,94 +1,144 @@
+*:root {
+    --color-verde-ruta: #1e7a4f;
+    --color-verde-ruta-rgb: 30, 122, 79;
+    --color-naranja-pedal: #F39A2B;
+    --color-naranja-pedal-rgb: 243, 154, 43;
+    --color-azul-noche: #14213D;
+    --color-azul-noche-rgb: 20, 33, 61;
+    --color-crema: #FAF6EF;
+    --color-gris-asfalto: #5B6470;
+
+    --font-titulos: 'Montserrat', Arial, sans-serif;
+    --font-textos: 'Open Sans', Arial, sans-serif;
+
+    /* SOBREESCRITURA DE VARIABLES DE BOOTSTRAP */
+    --bs-primary: var(--color-verde-ruta);
+    --bs-primary-rgb: var(--color-verde-ruta-rgb);
+    --bs-warning: var(--color-naranja-pedal);
+    --bs-warning-rgb: var(--color-naranja-pedal-rgb);
+    --bs-dark: var(--color-azul-noche);
+    --bs-dark-rgb: var(--color-azul-noche-rgb);
+    --bs-link-color: var(--color-verde-ruta);
+    --bs-link-hover-color: var(--color-naranja-pedal);
+    --bs-border-radius: 0.75rem;
+
+    /* Variables tipográficas de Bootstrap */
+    --bs-body-font-family: var(--font-textos);
+    --bs-headings-font-family: var(--font-titulos);
+    --bs-body-color: var(--color-azul-noche);
+    --bs-body-bg: var(--color-crema);
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-:root {
-    --color-verde-ruta: #1e7a4f;
-    --color-naranja-pedal: #F39A2B;
-    --color-azul-noche: #14213D;
-    --color-crema: #FAF6EF;
-    --color-gris-asfalto: #5B6470;
-    --color-negro: #050505;
-
-    --font-titulos: 'Montserrat', Arial, sans-serif;
-    --font-textos: 'Open Sans', Arial, sans-serif;
-
-    /* Variables mapeadas para Bootstrap */
-    --bs-success: var(--color-verde-ruta);
-    --bs-warning: var(--color-naranja-pedal);
-    --bs-dark: var(--color-azul-noche);
-    --bs-secondary: var(--color-gris-asfalto);
-    --bs-light: var(--color-crema);
-}
-
 body {
-    background-color: var(--color-crema);
-    color: var(--color-azul-noche);
     font-family: var(--font-textos);
+    color: var(--color-azul-noche);
+    background-color: var(--color-crema);
     overflow-x: hidden; 
 }
 
-/* JERARQUÍA DE TEXTOS */
-.h1, .h2, .h3, .h4, .h5, .h6 {
+/* Fuente de Textos (Open Sans) - Forzando estilo normal */
+p, a, li, td, label, legend, input, select, textarea, button, .nav-link, .btn, .card-text, .footer-bloque p, caption {
+    font-family: var(--font-textos);
+    font-style: normal; 
+}
+
+/* Fuente de Títulos (Montserrat) - Forzando estilo normal */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .navbar-brand, .titulo-seccion, th {
     font-family: var(--font-titulos);
+    font-style: normal;
     color: var(--color-azul-noche);
 }
 
-h1, .h1 { font-weight: 700; }
-h2, .h2 { font-size: 1.50rem; font-weight: 700; margin-bottom: 1rem; }
-h3, .h3 { font-size: 1.10rem; font-weight: 600; margin-bottom: 0.5rem; }
 
-body p, .lead {
-    font-family: var(--font-textos);
+i.bi {
+    font-style: normal;
+    line-height: 1;
+}
+
+body p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    color: var(--color-azul-noche);
 }
 
-/* NAVBAR Y BANNERS (MANTENIENDO EL HOVER ORIGINAL VERDE) */
-.navbar-brand {
+/* BOTONES (Variables --bs-btn-*) */
+.btn-primary {
+    --bs-btn-color: #ffffff;
+    --bs-btn-bg: var(--color-verde-ruta);
+    --bs-btn-border-color: var(--color-verde-ruta);
+    --bs-btn-hover-color: var(--color-azul-noche);
+    --bs-btn-hover-bg: var(--color-naranja-pedal);
+    --bs-btn-hover-border-color: var(--color-naranja-pedal);
+    --bs-btn-active-color: var(--color-azul-noche);
+    --bs-btn-active-bg: var(--color-naranja-pedal);
+    --bs-btn-active-border-color: var(--color-naranja-pedal);
     font-family: var(--font-titulos);
-    color: var(--color-azul-noche);
-}
-
-.navbar-nav .nav-link {
-    font-family: var(--font-textos);
-    color: var(--color-gris-asfalto);
-    font-weight: 400;
-}
-
-.navbar-nav .nav-link:hover {
-    color: var(--color-verde-ruta);
-}
-
-.navbar-nav .nav-link.active {
-    color: var(--color-verde-ruta);
     font-weight: 600;
 }
 
-.img-banner {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
+.btn-naranja {
+    --bs-btn-color: var(--color-azul-noche);
+    --bs-btn-bg: var(--color-naranja-pedal);
+    --bs-btn-border-color: var(--color-naranja-pedal);
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: var(--color-verde-ruta);
+    --bs-btn-hover-border-color: var(--color-verde-ruta);
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: var(--color-verde-ruta);
+    --bs-btn-active-border-color: var(--color-verde-ruta);
+    font-family: var(--font-titulos);
+    font-weight: 600;
 }
 
-/* CARRUSEL DE PROMOCIONES */
-.carousel-img {
-    width: 100%;
-    height: 450px;
-    object-fit: contain; 
-    background-color: #ffffff; 
+.btn-outline-primary {
+    --bs-btn-color: var(--color-verde-ruta);
+    --bs-btn-border-color: var(--color-verde-ruta);
+    --bs-btn-hover-color: var(--color-azul-noche);
+    --bs-btn-hover-bg: var(--color-naranja-pedal);
+    --bs-btn-hover-border-color: var(--color-naranja-pedal);
+    --bs-btn-active-color: var(--color-azul-noche);
+    --bs-btn-active-bg: var(--color-naranja-pedal);
+    --bs-btn-active-border-color: var(--color-naranja-pedal);
+    font-family: var(--font-titulos);
+    font-weight: 600;
 }
 
-@media (max-width: 768px) {
-    .carousel-img {
-        height: 250px;
-    }
+/* CLASES PROPIAS COMPLEMENTARIAS */
+.navbar-brand {
+    letter-spacing: 1px;
 }
 
-/* TARJETAS: Altura uniforme para imágenes */
+.titulo-seccion {
+    border-bottom: 3px solid var(--color-naranja-pedal);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.tarjeta-beneficio {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-beneficio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(20, 33, 61, 0.1);
+}
+
+/* FORMULARIOS, TABLAS Y OTROS */
+fieldset { border-color: var(--color-gris-asfalto); }
+legend { color: var(--color-azul-noche); font-family: var(--font-titulos); }
+.form-label { font-weight: 600; color: var(--color-azul-noche); }
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--color-naranja-pedal);
+    box-shadow: 0 0 0 0.25rem rgba(var(--color-naranja-pedal-rgb), 0.25);
+}
+
 .card-img-uniform {
     height: 200px;
     object-fit: contain;
@@ -96,123 +146,41 @@ body p, .lead {
     padding: 1rem;
 }
 
-/* BOTONES PERSONALIZADOS (HOVER Y FOCUS EN NARANJA) */
-.btn-success {
-    background-color: var(--color-verde-ruta);
-    border-color: var(--color-verde-ruta);
-    color: #ffffff;
-    font-family: var(--font-titulos);
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-success:hover, .btn-success:focus {
-    background-color: var(--color-naranja-pedal);
-    border-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche); 
-    box-shadow: 0 0 0 0.25rem rgba(243, 154, 43, 0.5);
-}
-
-.btn-outline-success {
-    color: var(--color-verde-ruta);
-    border-color: var(--color-verde-ruta);
-    font-family: var(--font-titulos);
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-success:hover, .btn-outline-success:focus {
-    background-color: var(--color-naranja-pedal);
-    border-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
-}
-
-.btn-outline-warning {
-    color: var(--color-naranja-pedal);
-    border-color: var(--color-naranja-pedal);
-    font-family: var(--font-titulos);
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-warning:hover, .btn-outline-warning:focus {
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
-    border-color: var(--color-naranja-pedal);
-}
-
-/* FORMULARIOS */
-fieldset { border: 1px solid var(--color-gris-asfalto); }
-legend { font-family: var(--font-titulos); color: var(--color-azul-noche); }
-.form-label { font-weight: 600; color: var(--color-azul-noche); }
-
-.form-control:focus, .form-select:focus {
-    border-color: var(--color-naranja-pedal);
-    box-shadow: 0 0 0 0.25rem rgba(243, 154, 43, 0.25);
-    outline: none;
-}
-
-/* SERVICIOS */
-.servicios { list-style-position: inside; padding: 0; }
-.servicios li {
-    background-color: #ffffff;
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 0.75rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease-in-out;
-}
-
-.servicios li:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    border-color: var(--color-verde-ruta);
-}
-
-/* TABLAS */
 #tabla-bicis, #tabla-rutas, .tabla-horarios {
     border-collapse: collapse;
     font-size: 0.85rem;
     background-color: #ffffff;
 }
 th, td {
-    border: 1px solid var(--color-negro);
-    padding: 0.5rem;
-    text-align: left;
+    border: 1px solid var(--color-azul-noche);
+    padding: 0.75rem 1rem;
     color: var(--color-azul-noche);
 }
 th { background-color: var(--color-verde-ruta); color: #ffffff; font-weight: bold; }
 tr:nth-child(even) { background-color: var(--color-crema); }
 
-/* FOOTER Y WHATSAPP */
-footer {
-    border-top: 1px solid var(--color-gris-asfalto);
-}
 .footer-bloque h3 { color: var(--color-verde-ruta); margin-bottom: 0.5rem; }
 .footer-bloque p { font-size: 1rem; margin-bottom: 0.25rem; }
 
 .whatsapp-BOTON {
     position: fixed;
-    bottom: 1rem;
-    right: 1rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
     background-color: #25D366;
     color: #ffffff;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.25rem;
     border-radius: 2rem;
     text-decoration: none;
     font-weight: 600;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
     z-index: 1000;
     transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .whatsapp-BOTON:hover {
     transform: scale(1.05);
     color: #ffffff;
-}
-
-@media (min-width: 768px) {
-    #tabla-bicis, #tabla-rutas, .tabla-horarios { font-size: 1rem; }
-    th, td { padding: 0.75rem 1rem; }
 }

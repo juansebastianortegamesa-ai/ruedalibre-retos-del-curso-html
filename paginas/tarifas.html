@@ -6,8 +6,10 @@
     <meta name="description" content="Tarifas de alquiler de bicicletas en Rueda Libre.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>Tarifas | Rueda Libre</title>
 </head>
@@ -15,27 +17,34 @@
 
     <nav class="navbar navbar-expand-lg bg-white border-bottom py-3">
         <div class="container">
-            <h1 class="navbar-brand fs-3 mb-0">Tarifas</h1>
+            <h1 class="navbar-brand fs-3 mb-0">
+                <i class="bi bi-bicycle me-2 text-primary" aria-hidden="true"></i>Tarifas
+            </h1>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Alternar navegación">
-                <span class="navbar-toggler-icon"></span>
+                <div class="navbar-toggler-icon"></div>
             </button>
             <div class="collapse navbar-collapse" id="menuPrincipal">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Inicio</a>
+                        <a class="nav-link" href="../index.html">
+                            <i class="bi bi-house-door me-1" aria-hidden="true"></i>Inicio
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="tarifas.html">Tarifas</a>
+                        <a class="nav-link active" aria-current="page" href="tarifas.html">
+                            <i class="bi bi-currency-dollar me-1" aria-hidden="true"></i>Tarifas
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="reservas.html">Puedes reservar aquí</a>
+                        <a class="nav-link" href="reservas.html">
+                            <i class="bi bi-calendar-check me-1" aria-hidden="true"></i>Reservar
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-   
     <div class="container text-center py-4">
         <img src="../img/metodosdepago.png" alt="Métodos de pago" class="img-fluid img-banner mx-auto d-block">
     </div>
@@ -122,9 +131,9 @@
 
             <aside class="col-12 col-lg-4">
                 <div class="bg-white border rounded p-4 h-100 shadow-sm d-flex flex-column">
-                    <h2 class="mb-3">Información de interés</h2>
+                    <h2 class="mb-3 titulo-seccion">Información de interés</h2>
                     <p>Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las 7:00 a. m.</p>
-                    <h3 class="mt-2 mb-2 fs-5">Qué llevar:</h3>
+                    <h3 class="mt-2 mb-2 fs-5 text-primary">Qué llevar:</h3>
                     <ol class="mb-4">
                         <li>Ropa cómoda</li>
                         <li>Agua</li>
@@ -132,7 +141,7 @@
                         <li>Documento de identidad</li>
                     </ol>
                     <div class="d-grid mt-auto">
-                        <a href="reservas.html" class="btn btn-success btn-lg">Reservar ahora</a>
+                        <a href="reservas.html" class="btn btn-primary btn-lg">Reservar ahora</a>
                     </div>
                 </div>
             </aside>
@@ -148,8 +157,8 @@
                 </div>
                 <div class="col-12 col-md-3 footer-bloque">
                     <h3>Contacto</h3>
-                    <p>hola@ruedalibre@gmail.com</p>
-                    <p>+57 300 000 0000</p>
+                    <p><i class="bi bi-envelope me-2" aria-hidden="true"></i>hola@ruedalibre@gmail.com</p>
+                    <p><i class="bi bi-telephone me-2" aria-hidden="true"></i>+57 300 000 0000</p>
                 </div>
                 <div class="col-12 col-md-3 footer-bloque">
                     <h3>Horario</h3>
@@ -158,7 +167,9 @@
                 </div>
             </div>
         </div>
-        <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-BOTON" aria-label="Chatear por WhatsApp">WhatsApp</a>
+        <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-BOTON" aria-label="Chatear por WhatsApp">
+            <i class="bi bi-whatsapp fs-5" aria-hidden="true"></i> WhatsApp
+        </a>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
