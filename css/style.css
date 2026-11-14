@@ -1,4 +1,5 @@
-*:root {
+:root {
+    /* Variables de marca */
     --color-verde-ruta: #1e7a4f;
     --color-verde-ruta-rgb: 30, 122, 79;
     --color-naranja-pedal: #F39A2B;
@@ -7,11 +8,12 @@
     --color-azul-noche-rgb: 20, 33, 61;
     --color-crema: #FAF6EF;
     --color-gris-asfalto: #5B6470;
+    --color-rojo-dificil: #8A1C1C;
 
     --font-titulos: 'Montserrat', Arial, sans-serif;
     --font-textos: 'Open Sans', Arial, sans-serif;
 
-    /* SOBREESCRITURA DE VARIABLES DE BOOTSTRAP */
+    /* Sobreescritura de variables de Bootstrap */
     --bs-primary: var(--color-verde-ruta);
     --bs-primary-rgb: var(--color-verde-ruta-rgb);
     --bs-warning: var(--color-naranja-pedal);
@@ -24,12 +26,15 @@
 
     /* Variables tipográficas de Bootstrap */
     --bs-body-font-family: var(--font-textos);
-    --bs-headings-font-family: var(--font-titulos);
     --bs-body-color: var(--color-azul-noche);
     --bs-body-bg: var(--color-crema);
+
+    --bs-heading-font-weight: 700;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -39,22 +44,46 @@ body {
     font-family: var(--font-textos);
     color: var(--color-azul-noche);
     background-color: var(--color-crema);
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
-/* Fuente de Textos (Open Sans) - Forzando estilo normal */
-p, a, li, td, label, legend, input, select, textarea, button, .nav-link, .btn, .card-text, .footer-bloque p, caption {
+p,
+a,
+li,
+td,
+label,
+legend,
+input,
+select,
+textarea,
+button,
+.nav-link,
+.btn,
+.card-text,
+.footer-bloque p,
+caption {
     font-family: var(--font-textos);
-    font-style: normal; 
+    font-style: normal;
 }
 
-/* Fuente de Títulos (Montserrat) - Forzando estilo normal */
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .navbar-brand, .titulo-seccion, th {
+/* Títulos y subtítulos h1 a h3 usando variables de Bootstrap y marca */
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+    --bs-heading-color: var(--color-azul-noche);
+    font-family: var(--font-titulos);
+    font-weight: var(--bs-heading-font-weight);
+    color: var(--bs-heading-color);
+    line-height: 1.2;
+}
+
+h4, .h4,
+h5, .h5,
+h6, .h6 {
     font-family: var(--font-titulos);
     font-style: normal;
     color: var(--color-azul-noche);
 }
-
 
 i.bi {
     font-style: normal;
@@ -66,7 +95,40 @@ body p {
     margin-bottom: 1rem;
 }
 
-/* BOTONES (Variables --bs-btn-*) */
+a:focus-visible,
+button:focus-visible,
+.form-control:focus-visible,
+.form-select:focus-visible {
+    outline: 3px solid var(--color-naranja-pedal);
+    outline-offset: 2px;
+}
+
+/* Navbar */
+.navbar {
+    --bs-navbar-color: var(--color-azul-noche);
+    --bs-navbar-hover-color: var(--color-verde-ruta);
+    --bs-navbar-active-color: var(--color-verde-ruta);
+    --bs-navbar-brand-color: var(--color-azul-noche);
+    --bs-navbar-brand-hover-color: var(--color-verde-ruta);
+    --bs-navbar-toggler-border-color: var(--color-gris-asfalto);
+}
+
+.navbar .nav-link {
+    font-family: var(--font-titulos);
+    font-weight: 600;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus-visible,
+.navbar .nav-link.active {
+    color: var(--color-verde-ruta);
+}
+
+.navbar-brand {
+    letter-spacing: 1px;
+}
+
+/* Botones */
 .btn-primary {
     --bs-btn-color: #ffffff;
     --bs-btn-bg: var(--color-verde-ruta);
@@ -108,11 +170,7 @@ body p {
     font-weight: 600;
 }
 
-/* CLASES PROPIAS COMPLEMENTARIAS */
-.navbar-brand {
-    letter-spacing: 1px;
-}
-
+/* Clases propias complementarias */
 .titulo-seccion {
     border-bottom: 3px solid var(--color-naranja-pedal);
     padding-bottom: 0.5rem;
@@ -129,16 +187,50 @@ body p {
     box-shadow: 0 10px 20px rgba(20, 33, 61, 0.1);
 }
 
-/* FORMULARIOS, TABLAS Y OTROS */
-fieldset { border-color: var(--color-gris-asfalto); }
-legend { color: var(--color-azul-noche); font-family: var(--font-titulos); }
-.form-label { font-weight: 600; color: var(--color-azul-noche); }
+.imagen-banner {
+    max-height: 180px;
+    object-fit: contain;
+}
 
-.form-control:focus, .form-select:focus {
+.precio-tarjeta {
+    display: inline-block;
+    color: var(--color-azul-noche);
+    font-weight: 700;
+    border-bottom: 3px solid var(--color-naranja-pedal);
+}
+
+.nivel-facil {
+    color: var(--color-verde-ruta);
+    font-weight: 700;
+}
+
+.nivel-dificil {
+    color: var(--color-rojo-dificil);
+    font-weight: 700;
+}
+
+/* Formularios */
+fieldset {
+    border-color: var(--color-gris-asfalto);
+}
+
+legend {
+    color: var(--color-azul-noche);
+    font-family: var(--font-titulos);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--color-azul-noche);
+}
+
+.form-control:focus,
+.form-select:focus {
     border-color: var(--color-naranja-pedal);
     box-shadow: 0 0 0 0.25rem rgba(var(--color-naranja-pedal-rgb), 0.25);
 }
 
+/* Tarjetas e imágenes */
 .card-img-uniform {
     height: 200px;
     object-fit: contain;
@@ -146,23 +238,45 @@ legend { color: var(--color-azul-noche); font-family: var(--font-titulos); }
     padding: 1rem;
 }
 
-#tabla-bicis, #tabla-rutas, .tabla-horarios {
+/* Tablas */
+#tabla-bicis,
+#tabla-rutas,
+.tabla-horarios {
     border-collapse: collapse;
     font-size: 0.85rem;
     background-color: #ffffff;
 }
-th, td {
+
+th,
+td {
     border: 1px solid var(--color-azul-noche);
     padding: 0.75rem 1rem;
     color: var(--color-azul-noche);
 }
-th { background-color: var(--color-verde-ruta); color: #ffffff; font-weight: bold; }
-tr:nth-child(even) { background-color: var(--color-crema); }
 
-.footer-bloque h3 { color: var(--color-verde-ruta); margin-bottom: 0.5rem; }
-.footer-bloque p { font-size: 1rem; margin-bottom: 0.25rem; }
+th {
+    background-color: var(--color-verde-ruta);
+    color: #ffffff;
+    font-weight: bold;
+}
 
-.whatsapp-BOTON {
+tr:nth-child(even) {
+    background-color: var(--color-crema);
+}
+
+/* Footer */
+.footer-bloque h3 {
+    color: var(--color-verde-ruta);
+    margin-bottom: 0.5rem;
+}
+
+.footer-bloque p {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Botón WhatsApp */
+.boton-whatsapp {
     position: fixed;
     bottom: 1.5rem;
     right: 1.5rem;
@@ -180,7 +294,7 @@ tr:nth-child(even) { background-color: var(--color-crema); }
     gap: 0.5rem;
 }
 
-.whatsapp-BOTON:hover {
+.boton-whatsapp:hover {
     transform: scale(1.05);
     color: #ffffff;
 }

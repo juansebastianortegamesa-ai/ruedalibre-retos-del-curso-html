@@ -6,7 +6,6 @@
     <meta name="description" content="Tarifas de alquiler de bicicletas en Rueda Libre.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -15,38 +14,40 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-white border-bottom py-3">
-        <div class="container">
-            <h1 class="navbar-brand fs-3 mb-0">
-                <i class="bi bi-bicycle me-2 text-primary" aria-hidden="true"></i>Tarifas
-            </h1>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Alternar navegación">
-                <div class="navbar-toggler-icon"></div>
-            </button>
-            <div class="collapse navbar-collapse" id="menuPrincipal">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">
-                            <i class="bi bi-house-door me-1" aria-hidden="true"></i>Inicio
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="tarifas.html">
-                            <i class="bi bi-currency-dollar me-1" aria-hidden="true"></i>Tarifas
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="reservas.html">
-                            <i class="bi bi-calendar-check me-1" aria-hidden="true"></i>Reservar
-                        </a>
-                    </li>
-                </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-white border-bottom py-3" aria-label="Navegación principal">
+            <div class="container">
+                <h1 class="navbar-brand fs-3 mb-0">
+                    <i class="bi bi-bicycle me-2 text-primary" aria-hidden="true"></i>Tarifas
+                </h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Alternar navegación">
+                    <div class="navbar-toggler-icon"></div>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">
+                                <i class="bi bi-house-door me-1" aria-hidden="true"></i>Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="tarifas.html">
+                                <i class="bi bi-currency-dollar me-1" aria-hidden="true"></i>Tarifas
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reservas.html">
+                                <i class="bi bi-calendar-check me-1" aria-hidden="true"></i>Reservar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <div class="container text-center py-4">
-        <img src="../img/metodosdepago.png" alt="Métodos de pago" class="img-fluid img-banner mx-auto d-block">
+        <img src="../img/metodosdepago.png" alt="Métodos de pago" class="img-fluid imagen-banner mx-auto d-block">
     </div>
 
     <main class="container pb-4">
@@ -60,7 +61,7 @@
                                 <tr>
                                     <th scope="col">Tipo de bicicleta</th>
                                     <th scope="col">1 hora</th>
-                                    <th scope="col">Media día(4h)</th>
+                                    <th scope="col">Media día (4h)</th>
                                     <th scope="col">Día completo</th>
                                 </tr>
                             </thead>
@@ -167,7 +168,7 @@
                 </div>
             </div>
         </div>
-        <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-BOTON" aria-label="Chatear por WhatsApp">
+        <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="boton-whatsapp" aria-label="Chatear por WhatsApp">
             <i class="bi bi-whatsapp fs-5" aria-hidden="true"></i> WhatsApp
         </a>
     </footer>

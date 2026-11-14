@@ -120,3 +120,64 @@ El objetivo de esta migración fue refactorizar el sitio web de "Rueda Libre" pa
 ## 5. Conclusión
 La migración a **Bootstrap 5.3 (v2.0-beta)** ha sido un éxito total. Se logró el objetivo principal: **delegar toda la responsividad y distribución al framework, dejando el CSS propio exclusivamente para la identidad visual** (colores, tipografía, bordes y sombras). Las páginas de Inicio, Tarifas y Reservas se adaptan perfectamente a los tres anchos solicitados (360px, 768px y 1280px). El código es ahora escalable, semántico, libre de malas prácticas (sin `<span>` innecesarios, sin `style=""`, sin `!important`) y está listo para ser desplegado en GitHub Pages.
 
+
+-------------------------------------
+
+# Bitácora de Desarrollo - Proyecto Rueda Libre (v2.0)
+
+**Pequeño Resumen Ejecutivo:** 
+Este documento detalla la evolución técnica del proyecto "Rueda Libre", desde su estructura inicial hasta la implementación de la versión 2.0. El objetivo principal fue personalizar profundamente Bootstrap 5.3.3 para alinearlo con la identidad visual de la marca (Verde Ruta, Naranja Pedal, Azul Noche), garantizando al mismo tiempo el cumplimiento estricto de las normas de accesibilidad, la semántica HTML y las buenas prácticas de desarrollo, todo sin modificar los archivos originales del framework.
+
+---
+
+## 1. Correcciones en `style.css` y Variables Globales
+*   **Corrección de sintaxis raíz:** Se eliminó el selector erróneo `*:root` y se reemplazó por el correcto `:root` para que las variables globales de CSS se apliquen adecuadamente.
+*   **Sobreescritura de variables de Bootstrap:** Se definieron las variables `--bs-primary`, `--bs-primary-rgb`, `--bs-link-color`, `--bs-link-hover-color`, `--bs-border-radius`, `--bs-body-font-family`, `--bs-body-color` y `--bs-body-bg` para alinear el framework con los colores y fuentes de la marca.
+*   **Tipografía:** Se aplicó la fuente Montserrat a los títulos y Open Sans a los textos. Se corrigió la asignación de los encabezados (`h1`, `h2`, `h3`) para usar la variable nativa `--bs-heading-color` y se forzó el grosor mediante una variable personalizada `--bs-heading-font-weight: 700`.
+*   **Eliminación de malas prácticas:** Se eliminó cualquier uso de `!important` en el archivo, logrando la personalización mediante la especificidad correcta del CSS y el uso de las variables nativas de Bootstrap.
+
+## 2. Botones y Clases Propias
+*   **Botón Principal (`btn-primary`):** Se personalizó usando las variables `--bs-btn-*` de Bootstrap para que el estado normal sea Verde Ruta y el `:hover` / `:active` sea Naranja Pedal con texto Azul Noche, asegurando el contraste.
+*   **Nuevo Botón Naranja (`.btn-naranja`):** Se creó esta variante con sus respectivos estados (fondo Naranja, hover Verde) para el llamado a la acción principal (CTA) del inicio.
+*   **Botón Outline (`.btn-outline-primary`):** Se ajustó para mantener la coherencia con los colores de la marca.
+*   **Creación de más de 3 clases propias:** Se implementaron clases complementarias a Bootstrap: `.titulo-seccion`, `.tarjeta-beneficio` (con efecto hover), `.precio-tarjeta`, `.nivel-facil`, `.nivel-dificil`, `.imagen-banner`, `.card-img-uniform` y `.boton-whatsapp`.
+
+## 3. Cambios Semánticos y Estructurales en el HTML
+*   **Etiqueta Header:** Se delimitó correctamente la cabecera de todas las páginas utilizando la etiqueta semántica `<header>` que envuelve al `<nav>`.
+*   **Navbar con Iconos:** Se integró **Bootstrap Icons** (vía CDN) en el menú de navegación. Se agregaron iconos a cada enlace y se configuró el color de hover a Verde Ruta mediante las variables `--bs-navbar-hover-color` y reglas CSS específicas.
+*   **Unificación de Botones:** Se reemplazaron los botones antiguos que usaban `btn-success` por el nuevo `.btn-primary` personalizado para mantener la identidad visual estricta.
+*   **Estructura en Grillas:** Se estandarizó la estructura de las secciones para que sigan estrictamente el patrón de Bootstrap: `container > row > col`. Esto se aplicó en productos, rutas, flota y la nueva sección de servicios.
+*   **Rediseño de "Nuestros Servicios":** Se cambió la lista ordenada (`<ol>`) de la versión original por un diseño de tarjetas (usando la clase `.tarjeta-beneficio` con iconos representativos), logrando una interfaz mucho más visual y coherente con la sección "¿Por qué elegir Rueda Libre?".
+*   **Uso correcto de Tablas:** Se aseguró de que la clase `.table-responsive` se aplicara única y exclusivamente a los contenedores de tablas (Horarios en `reservas.html` y Tarifas en `tarifas.html`), manteniendo el formulario adaptado mediante las columnas de la grilla de Bootstrap.
+
+## 4. Accesibilidad y Buenas Prácticas
+*   **Iconos Accesibles:** Se agregó el atributo `aria-hidden="true"` a todos los iconos de Bootstrap Icons que son meramente decorativos.
+*   **Botones con `aria-label`:** Se añadieron etiquetas `aria-label` a botones que solo contienen iconos (como el botón de cerrar de las alertas/modales, los controles del carrusel y el botón flotante de WhatsApp) para que los lectores de pantalla sepan qué hacen.
+*   **Contraste:** Se verificó que la combinación de colores (texto blanco sobre fondo verde oscuro, y texto azul noche sobre fondo naranja) cumpla con la relación de contraste mínima de 4.5:1 exigida por las normas de accesibilidad.
+*   **Semántica HTML:** Se reemplazaron elementos genéricos por etiquetas semánticas, como usar `<article>` para las tarjetas, `<section>` para los bloques temáticos, `<aside>` para información complementaria y un enlace de "Saltar al contenido" (`visually-hidden-focusable`) para la navegación por teclado.
+
+## 5. Checklist de Cumplimiento (Rúbrica)
+*   [x] Variables de Bootstrap sobreescritas sin tocar el archivo original del CDN.
+*   [x] Uso de variables `--bs-btn-*` para los botones.
+*   [x] Creación de más de 3 clases propias complementarias.
+*   [x] Integración de Bootstrap Icons con accesibilidad (`aria-hidden`, `aria-label`).
+*   [x] Código estructurado estrictamente en `container > row > col`.
+*   [x] Cero uso de `!important` y cero etiquetas `<span>`.
+*   [x] Archivo `style.css` limpio y cargado después de Bootstrap.
+*   [x] Diseño completamente adaptable a móvil, tablet y escritorio.
+
+## 6. Conclusión y Aprendizajes
+A lo largo de este proyecto, se consolidaron aprendizajes fundamentales sobre el desarrollo frontend moderno:
+
+1.  **Personalización Profunda de Frameworks:** Se comprendió cómo extender y adaptar Bootstrap sin necesidad de modificar sus archivos fuente, aprovechando al máximo su arquitectura de variables CSS (`--bs-*`). Esto garantiza que el código sea fácil de mantener y actualizar en el futuro.
+2.  **La Importancia de la Semántica y Accesibilidad:** Se evidenció que una página no solo debe verse bien, sino ser comprensible para todos. El uso correcto de etiquetas HTML5 (`<header>`, `<main>`, `<section>`, `<article>`) y atributos de accesibilidad (`aria-label`, `aria-hidden`) son pilares no negociables en el desarrollo web profesional.
+3.  **Buenas Prácticas CSS:** Se reforzó la idea de evitar malas prácticas como el uso de `!important` o estilos en línea. Al entender la especificidad y la cascada de CSS, se logró un código más limpio, escalable y predecible.
+4.  **Diseño Responsivo Estructurado:** Se dominó el sistema de cuadrícula de Bootstrap (`container > row > col`) para crear interfaces que se adaptan perfectamente a cualquier dispositivo, entendiendo la responsabilidad de cada clase utilitaria.
+
+
+
+
+
+
+
+
