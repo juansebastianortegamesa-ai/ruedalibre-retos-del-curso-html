@@ -87,7 +87,7 @@ ruedalibre-retos-del-curso-html/
 2. Abre el archivo `index.html` en tu navegador.
 3. Navega entre las páginas usando los enlaces del menú.
 
-> **Recomendación:** Para una mejor experiencia, puedes usar la extensión **Live Server** de VS Code o cualquier servidor local estático.
+> **Recomendación:** para abrir mejor el archivo desde visual usaar  la extensión **Live Server** de VS Code o cualquier servidor local estático.
 
 ## 🎯 Objetivo del Proyecto
 
@@ -107,5 +107,5 @@ Este repositorio refleja el aprendizaje y la aplicación práctica de:
 ---
 
 **Autor:** Juan Sebastián Ortega Mesa  
-**Curso:** Retos del Curso HTML – Riwi  
+**Curso:** curso html  y css  – Riwi  
 **Año:** 2026
